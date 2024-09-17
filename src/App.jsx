@@ -1,38 +1,32 @@
-// import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
-// import "./App.css"; // Import your custom CSS
-// import Navbar from "./components/NavBar";
-// import Header from "./components/Header";
-// import Footer from "./components/Footer";
-// function App() {
-//   return (
-//     <>
-//       <Navbar />
-//       <Header></Header>
-//       <Footer></Footer>
-     
-     
-//     </>
-//   );
-// }
-
-// export default App;
 
 
-import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
-import "./App.css"; // Import your custom CSS
+
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="wrapper">
-      <Navbar />
-      <div className="content">
-        <Header />
+    <Router>
+      <div className="wrapper">
+        <Navbar />
+        <div className="content">
+          <Routes>
+            {/* Define routes for different components */}
+            <Route path="/" element={<Header />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </Routes>
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </Router>
   );
 }
 

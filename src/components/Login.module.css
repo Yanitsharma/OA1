@@ -1,0 +1,9 @@
+.vivek {
+  height: 100%;
+  margin: 0;
+  background-image: url('C:\OA_Project\First-OA-Project\public/19187761.jpg'); /* Replace with your image URL */
+  background-size: cover; /* Ensure the image covers the entire body */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent repeating the image */
+  position: relative; /* Make sure the background is properly positioned */
+}
