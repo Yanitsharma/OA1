@@ -57,3 +57,63 @@ body::after {
   background: rgba(0, 0, 0, 0.5); /* Dark overlay with 50% opacity */
   z-index: -1; /* Place it behind the content */
 }
+
+
+/* Sidebar container styling */
+.sidebar {
+  width: 250px;
+  background-color: #f4f4f4;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -250px; /* Hidden initially */
+  transition: left 0.3s ease; /* Smooth open/close transition */
+  padding: 20px;
+  z-index: 1000;
+}
+
+.sidebar.open {
+  left: 0; /* Show when open */
+}
+
+/* Ensure the sidebar icon is visible and clickable */
+.hamburger-icon {
+  position: fixed;
+  top: 20px;       /* Adjust top positioning */
+  left: 20px;      /* Adjust left positioning */
+  cursor: pointer;
+  z-index: 1100;   /* Ensure it appears above the content */
+  display: flex;   /* Flexbox for alignment of lines */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 40px;     /* Width of the icon */
+  height: 30px;    /* Height of the icon */
+}
+
+.hamburger-icon .line {
+  width: 100%;              /* Full width of the container */
+  height: 4px;              /* Thickness of the lines */
+  background-color: white;   /* Color of the lines */
+  margin: 3px 0;            /* Space between lines */
+}
+.vivek{
+ position: relative;
+ top: 10px;
+  color: white;
+}
+.pt{
+  position: relative;
+    top: -50px;
+    font-family: cursive;
+    font-size: larger;
+    background-color: darkgreen;
+    border-radius: 20px;
+    margin: 40px;
+}
+.cont{
+  display: flex ;
+  flex-direction: column; 
+  justify-content: center;
+
+}
+
