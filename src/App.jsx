@@ -56,12 +56,12 @@ function App() {
   return (
     <>
       <Router>
-        <div className="wrapper">
+        {/* <div className="wrapper"> */}
           <Navbar />
           {/* Pass the toggleSidebar function to Sidebar */}
           <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} /> 
           <div
-            className="content"
+            // className="content"
             // style={{
             //   marginLeft: sidebarOpen ? "270px" : "0px",  // Adjust content margin
             //   padding: "20px",
@@ -79,7 +79,7 @@ function App() {
             </Routes>
           </div>
           <Footer />
-        </div>
+        {/* </div> */}
       </Router>
     </>
   );
