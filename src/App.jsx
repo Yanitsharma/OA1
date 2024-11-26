@@ -40,6 +40,7 @@ import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Sidebar from "./components/Sidebar";
 import Visa from "./components/Visa";
+import  Media from "./components/MediaNet";
 import Register from "./components/Register";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import TopicPage from "./components/TopicPage";
@@ -74,6 +75,7 @@ function App() {
               <Route path="/register" element={<Register />} />
               {/* Define route for topics and questions */}
               <Route path="/topic/" element={<Visa />} />
+              <Route path="/topic/media" element={<Media />} />
               <Route path="/topic/:topicName" element={<TopicPage />} />
               {/* <Route path="/topic/:topicName/:questionName" element={<QuestionPage />} /> */}
             </Routes>

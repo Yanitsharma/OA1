@@ -22,6 +22,11 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
               </Link> 
           </li>
           <li>
+            <Link to="/topic/media" onClick={toggleSidebar}> 
+            Media.Net
+              </Link> 
+          </li>
+          <li>
             <Link to="/topic/linked-lists" onClick={toggleSidebar}>
               Microsoft
             </Link>

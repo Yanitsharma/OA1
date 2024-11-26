@@ -41,7 +41,7 @@ const Login = () => {
     <Container 
       className={`mt-4 login`}
       style={{ width: "30%", margin: "0 auto" }}
-      className = {styles.vivek}
+      
     >
       <center>
         <h2>Login</h2>
