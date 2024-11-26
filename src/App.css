@@ -116,4 +116,12 @@ body::after {
   justify-content: space-between;
 
 }
+.nt{
+  display: flex;
+  flex-direction: column;
 
+}
+.tt{
+  width: 400px;
+    margin-top: 30px;
+}

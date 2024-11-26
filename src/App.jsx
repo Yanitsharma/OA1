@@ -46,10 +46,17 @@ import  BNY from "./components/BNY";
 import Register from "./components/Register";
 
 import Microsoft from "./components/Microsoft";
+import Salesforce from "./components/Salesforce";
+import Cisco from "./components/Cisco";
+import Amazon from "./components/Amazon";
+import Google from "./components/Google";
+import WellsFargo from "./components/WellsFargo";
+import UnifyApps from "./components/UnifyApps";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import TopicPage from "./components/TopicPage";
 import QuestionPage from "./components/QuestionPage";
 import { useState } from "react";  // Import useState to manage sidebar state
+
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);  // Manage sidebar state
@@ -81,7 +88,13 @@ function App() {
               <Route path="/topic/" element={<Visa />} />
               <Route path="/topic/media" element={<Media />} />
               <Route path="/topic/deutsche" element={<Deutsche />} />
+              <Route path="/topic/Unifyapps" element={<UnifyApps />} />
+              <Route path="/topic/Salesforce" element={<Salesforce/>} />
+              <Route path="/topic/Cisco" element={<Cisco/>} />
               <Route path="/topic/Microsoft" element={<Microsoft/>} />
+              <Route path="/topic/Amazon" element={<Amazon/>} />
+              <Route path="/topic/Google" element={<Google/>} />
+              <Route path="/topic/WellsFargo" element={<WellsFargo/>} />
               <Route path="/topic/BNY" element={<BNY/>} />
               <Route path="/topic/:topicName" element={<TopicPage />} />
               {/* <Route path="/topic/:topicName/:questionName" element={<QuestionPage />} /> */}
