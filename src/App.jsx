@@ -41,7 +41,11 @@ import Login from "./components/Login";
 import Sidebar from "./components/Sidebar";
 import Visa from "./components/Visa";
 import  Media from "./components/MediaNet";
+import  Deutsche from "./components/Deutsche";
+import  BNY from "./components/BNY";
 import Register from "./components/Register";
+
+import Microsoft from "./components/Microsoft";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import TopicPage from "./components/TopicPage";
 import QuestionPage from "./components/QuestionPage";
@@ -76,10 +80,14 @@ function App() {
               {/* Define route for topics and questions */}
               <Route path="/topic/" element={<Visa />} />
               <Route path="/topic/media" element={<Media />} />
+              <Route path="/topic/Deutsche" element={<Deutsche />} />
+              <Route path="/topic/Microsoft" element={<Microsoft/>} />
+              <Route path="/topic/BNY" element={<BNY/>} />
               <Route path="/topic/:topicName" element={<TopicPage />} />
               {/* <Route path="/topic/:topicName/:questionName" element={<QuestionPage />} /> */}
             </Routes>
           </div>
+
           <Footer />
         {/* </div> */}
       </Router>
