@@ -1,19 +1,30 @@
-html, body {
+
+html, body, #root {
   height: 100%;
   margin: 0;
-}
-
-.wrapper {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Ensure that the wrapper takes up at least the full height of the viewport */
 }
 
-.content {
-  flex: 1;
+/* Wrapper for App component */
+.app-wrapper {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center;     /* Center vertically */
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Content area should grow to push footer down */
+.content {
+  flex: 1; /* Allows the content to grow and take up available space */
+  padding: 20px;
+}
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
 }
 
 .header-container {
@@ -117,3 +128,44 @@ body::after {
 
 }
 
+
+
+.moving-text {
+  margin: 250px 0px;
+  font-size: 3rem; /* Default font size */
+  font-weight: bold;
+  color: white;
+  overflow: hidden;
+  display: inline-block;
+  animation: shrinkGrow 1.5s ease-in-out infinite;
+  white-space: nowrap; /* Prevent wrapping initially */
+}
+
+/* Keyframes for the shrink-grow animation */
+@keyframes shrinkGrow {
+  0% {
+    width: 100%;
+  }
+  50% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* Responsive styles for smaller devices */
+@media (max-width: 768px) {
+  .moving-text {
+    font-size: 2rem; /* Adjust font size for tablets */
+    white-space: normal; /* Allow wrapping on smaller screens */
+    text-align: center; /* Center-align text */
+  }
+}
+
+@media (max-width: 480px) {
+  .moving-text {
+    font-size: 1.5rem; /* Even smaller font size for phones */
+    animation: none; /* Disable animation if text wraps */
+  }
+}
