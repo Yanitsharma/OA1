@@ -42,13 +42,34 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             </Link>
           </li>
           <li>
-            <Link to="/topic/trees" onClick={toggleSidebar}>
-              Google
+            <Link to="/topic/Salesforce" onClick={toggleSidebar}>
+             Salesforce
             </Link>
           </li>
           <li>
-            <Link to="/topic/graphs" onClick={toggleSidebar}>
+            <Link to="/topic/Cisco" onClick={toggleSidebar}>
+             Cisco
+            </Link>
+          </li>
+          <li>
+            <Link to="/topic/Unifyapps" onClick={toggleSidebar}>
+              UnifyApps
+            </Link>
+          </li>
+          <li>
+            <Link to="/topic/Google" onClick={toggleSidebar}>
+              Google
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/topic/Amazon" onClick={toggleSidebar}>
               Amazon
+            </Link>
+          </li>
+          <li>
+            <Link to="/topic/WellsFargo" onClick={toggleSidebar}>
+              WellsFargo
             </Link>
           </li>
           {/* Add more topics as needed */}
