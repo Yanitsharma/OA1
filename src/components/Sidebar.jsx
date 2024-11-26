@@ -27,7 +27,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
               </Link> 
           </li>
           <li>
-            <Link to="/topic/Deutsche" onClick={toggleSidebar}> 
+            <Link to="/topic/deutsche" onClick={toggleSidebar}> 
             Deutsche
               </Link> 
           </li>

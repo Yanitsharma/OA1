@@ -80,7 +80,7 @@ function App() {
               {/* Define route for topics and questions */}
               <Route path="/topic/" element={<Visa />} />
               <Route path="/topic/media" element={<Media />} />
-              <Route path="/topic/Deutsche" element={<Deutsche />} />
+              <Route path="/topic/deutsche" element={<Deutsche />} />
               <Route path="/topic/Microsoft" element={<Microsoft/>} />
               <Route path="/topic/BNY" element={<BNY/>} />
               <Route path="/topic/:topicName" element={<TopicPage />} />
