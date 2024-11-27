@@ -284,7 +284,7 @@ function App() {
           className="content"
           style={{
             marginLeft: isSidebarOpen ? "270px" : "0px", // Adjust content margin based on sidebar state
-            padding: "20px",
+            padding: "0px",
             transition: "margin-left 0.3s ease", // Smooth transition
           }}
         >
