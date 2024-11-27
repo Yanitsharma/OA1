@@ -221,7 +221,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useRef, useEffect } from "react"; // Import useState to manage sidebar state
 
 // Import components
-import Body from "./Body";
+import Home from "./components/Home";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Visa from "./components/Visa";
@@ -270,6 +270,7 @@ function App() {
   }, []);
 
   return (
+    
     <Router>
       {/* Main wrapper with flexbox */}
       <div className="app-wrapper">
@@ -287,12 +288,11 @@ function App() {
             transition: "margin-left 0.3s ease", // Smooth transition
           }}
         >
-          <Body />
-
           {/* Routes for different pages */}
           <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
             <Route path="/topic" element={<Visa />} />
             <Route path="/topic/media" element={<Media />} />
             <Route path="/topic/deutsche" element={<Deutsche />} />
