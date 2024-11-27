@@ -1,25 +1,23 @@
-
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
   margin: 0;
   display: flex;
   flex-direction: column;
 }
 
-/* Wrapper for App component */
 .app-wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* Content area should grow to push footer down */
 .content {
-  flex: 1; /* Allows the content to grow and take up available space */
+  flex: 1;
   padding: 20px;
 }
 
-/* Footer styles */
 footer {
   background-color: #333;
   color: white;
@@ -29,14 +27,14 @@ footer {
 
 .header-container {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center;     /* Center vertically */
+  justify-content: center;
+  align-items: center;
   width: 100%;
 }
 
 .card {
   max-width: 600px;
-  margin: 20px; /* Optional margin for spacing */
+  margin: 20px;
 }
 
 .footer {
@@ -46,106 +44,99 @@ footer {
   text-align: center;
 }
 
-
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
-  background-image: url('../public/11_aswasdas1.jpg'); /* Replace with your image URL */
-  background-size: cover; /* Ensure the image covers the entire body */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent repeating the image */
-  position: relative; /* Make sure the background is properly positioned */
+  background-image: url("../public/11_aswasdas1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
-/* Overlay for dark color with low opacity */
 body::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Dark overlay with 50% opacity */
-  z-index: -1; /* Place it behind the content */
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
 }
 
-
-/* Sidebar container styling */
 .sidebar {
   width: 250px;
   background-color: #f4f4f4;
   height: 100vh;
   position: fixed;
   top: 0;
-  left: -250px; /* Hidden initially */
-  transition: left 0.3s ease; /* Smooth open/close transition */
+  left: -250px;
+  transition: left 0.3s ease;
   padding: 20px;
   z-index: 1000;
 }
 
 .sidebar.open {
-  left: 0; /* Show when open */
+  left: 0;
 }
 
-/* Ensure the sidebar icon is visible and clickable */
 .hamburger-icon {
   position: fixed;
-  top: 20px;       /* Adjust top positioning */
-  left: 20px;      /* Adjust left positioning */
+  top: 20px;
+  left: 20px;
   cursor: pointer;
-  z-index: 1100;   /* Ensure it appears above the content */
-  display: flex;   /* Flexbox for alignment of lines */
+  z-index: 1100;
+  display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 40px;     /* Width of the icon */
-  height: 30px;    /* Height of the icon */
+  width: 40px;
+  height: 30px;
 }
 
 .hamburger-icon .line {
-  width: 100%;              /* Full width of the container */
-  height: 4px;              /* Thickness of the lines */
-  background-color: white;   /* Color of the lines */
-  margin: 3px 0;            /* Space between lines */
+  width: 100%;
+  height: 4px;
+  background-color: green;
+  margin: 3px 0;
 }
-.vivek{
- position: relative;
- top: 10px;
-  color: white;
-}
-.pt{
+.login {
+  height: 100%;
+  margin: 0;
+  background-image: url("../../public/19187761.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: relative;
-    top: -50px;
-    font-family: cursive;
-    font-size: larger;
-    background-color: darkgreen;
-    border-radius: 20px;
-    margin: 40px;
 }
-.cont{
-  display: flex ;
-  flex-direction: column; 
-  justify-content: space-between;
 
+.pt {
+  position: relative;
+  top: -50px;
+  font-family: cursive;
+  font-size: larger;
+  background-color: darkgreen;
+  border-radius: 20px;
+  margin: 40px;
 }
-/* .nt{
+.cont {
   display: flex;
-  flex-direction: column; */
-
-/* <<<<<<< HEAD */
-
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 .moving-text {
   margin: 250px 0px;
-  font-size: 3rem; /* Default font size */
+  font-size: 3rem;
   font-weight: bold;
   color: white;
   overflow: hidden;
   display: inline-block;
   animation: shrinkGrow 1.5s ease-in-out infinite;
-  white-space: nowrap; /* Prevent wrapping initially */
+  white-space: nowrap;
 }
 
-/* Keyframes for the shrink-grow animation */
 @keyframes shrinkGrow {
   0% {
     width: 100%;
@@ -158,35 +149,21 @@ body::after {
   }
 }
 
-/* Responsive styles for smaller devices */
 @media (max-width: 768px) {
   .moving-text {
-    font-size: 2rem; /* Adjust font size for tablets */
-    white-space: normal; /* Allow wrapping on smaller screens */
-    text-align: center; /* Center-align text */
+    font-size: 2rem;
+    white-space: normal;
+    text-align: center;
   }
 }
 
 @media (max-width: 480px) {
   .moving-text {
-    font-size: 1.5rem; /* Even smaller font size for phones */
-    animation: none; /* Disable animation if text wraps */
+    font-size: 1.5rem;
+    animation: none;
   }
 }
-/* =======
 
-.tt{
-  width: 400px;
-    margin-top: 30px;
->>>>>>> 03037414b9fcb18d975739cd78f1bece9a9ec985
-} */
-
-
-
-
-
-
-
-
-
-
+.company-name {
+  margin: 5px;
+}

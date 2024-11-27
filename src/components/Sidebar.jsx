@@ -16,78 +16,78 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       <div className={`sidebar ${isOpen ? "open" : ""}`}>
         <h3 style={{ margin: "30px 0px" }}>DSA Topics</h3>
         <ul>
-          <li>
-            <Link to="/topic/" onClick={toggleSidebar}> 
-          Visa
-              </Link> 
+          <li className="company-name">
+            <Link to="/topic/" onClick={toggleSidebar}>
+              Visa
+            </Link>
           </li>
-          <li>
-            <Link to="/topic/media" onClick={toggleSidebar}> 
-            Media.Net
-              </Link> 
+          <li className="company-name">
+            <Link to="/topic/media" onClick={toggleSidebar}>
+              Media.Net
+            </Link>
           </li>
-          <li>
-            <Link to="/topic/deutsche" onClick={toggleSidebar}> 
-            Deutsche
-              </Link> 
+          <li className="company-name">
+            <Link to="/topic/deutsche" onClick={toggleSidebar}>
+              Deutsche
+            </Link>
           </li>
-          <li>
+          <li className="company-name">
             <Link to="/topic/Microsoft" onClick={toggleSidebar}>
               Microsoft
             </Link>
           </li>
-          <li>
+          <li className="company-name">
             <Link to="/topic/BNY" onClick={toggleSidebar}>
               BNY
             </Link>
           </li>
-          <li>
+          <li className="company-name">
             <Link to="/topic/Salesforce" onClick={toggleSidebar}>
-             Salesforce
+              Salesforce
             </Link>
           </li>
-          <li>
+          <li className="company-name">
             <Link to="/topic/Cisco" onClick={toggleSidebar}>
-             Cisco
+              Cisco
             </Link>
           </li>
-          <li>
+          <li className="company-name">
             <Link to="/topic/Unifyapps" onClick={toggleSidebar}>
               UnifyApps
             </Link>
           </li>
-          <li>
+          <li className="company-name">
             <Link to="/topic/Google" onClick={toggleSidebar}>
               Google
             </Link>
           </li>
 
-          <li>
+          <li className="company-name">
             <Link to="/topic/Amazon" onClick={toggleSidebar}>
               Amazon
             </Link>
           </li>
-          <li>
+          <li className="company-name">
             <Link to="/topic/WellsFargo" onClick={toggleSidebar}>
               WellsFargo
             </Link>
           </li>
-          <li>
+          <li className="company-name">
             <Link to="/topic/Intuit" onClick={toggleSidebar}>
               Intuit
             </Link>
           </li>
-          <li>
+          <li className="company-name">
             <Link to="/topic/MasterCard" onClick={toggleSidebar}>
               MasterCard
             </Link>
           </li>
-          <li>
+          <li className="company-name">
             <Link to="/topic/UiPath" onClick={toggleSidebar}>
               UiPath
             </Link>
           </li>
-          <li>
+          <li className="company-name">
             <Link to="/topic/Jlr" onClick={toggleSidebar}>
               Jlr
             </Link>

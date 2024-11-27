@@ -1,5 +1,3 @@
-
-
 import styles from "./Login.module.css";
 
 import React, { useState } from "react";
@@ -38,10 +36,9 @@ const Login = () => {
   };
 
   return (
-    <Container 
+    <Container
       className={`mt-4 login`}
-      style={{ width: "30%", margin: "0 auto" }}
-      
+      style={{ width: "30%", height: "90%", margin: "0 auto" }}
     >
       <center>
         <h2>Login</h2>
