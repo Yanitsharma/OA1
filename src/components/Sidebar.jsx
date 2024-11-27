@@ -72,6 +72,26 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
               WellsFargo
             </Link>
           </li>
+          <li>
+            <Link to="/topic/Intuit" onClick={toggleSidebar}>
+              Intuit
+            </Link>
+          </li>
+          <li>
+            <Link to="/topic/MasterCard" onClick={toggleSidebar}>
+              MasterCard
+            </Link>
+          </li>
+          <li>
+            <Link to="/topic/UiPath" onClick={toggleSidebar}>
+              UiPath
+            </Link>
+          </li>
+          <li>
+            <Link to="/topic/Jlr" onClick={toggleSidebar}>
+              Jlr
+            </Link>
+          </li>
           {/* Add more topics as needed */}
         </ul>
       </div>

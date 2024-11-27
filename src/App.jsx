@@ -236,6 +236,11 @@ import Google from "./components/Google";
 import WellsFargo from "./components/WellsFargo";
 import UnifyApps from "./components/UnifyApps";
 import TopicPage from "./components/TopicPage";
+import Intuit from "./components/Intuit";
+import MasterCard from "./components/MasterCard";
+import UiPath from "./components/UiPath";
+import Jlr from "./components/Jlr";
+
 
 function App() {
   // const [sidebarOpen, setSidebarOpen] = useState(false); // Manage sidebar state
@@ -305,6 +310,10 @@ function App() {
             <Route path="/topic/WellsFargo" element={<WellsFargo />} />
             <Route path="/topic/BNY" element={<BNY />} />
             <Route path="/topic/:topicName" element={<TopicPage />} />
+            <Route path="/topic/UiPath" element={<UiPath/>} />
+              <Route path="/topic/MasterCard" element={<MasterCard/>} />
+              <Route path="/topic/Intuit" element={<Intuit />} />
+              <Route path="/topic/Jlr" element={<Jlr />} />
           </Routes>
         </div>
 
