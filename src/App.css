@@ -127,11 +127,11 @@ body::after {
   justify-content: space-between;
 
 }
-.nt{
+/* .nt{
   display: flex;
-  flex-direction: column;
+  flex-direction: column; */
 
-<<<<<<< HEAD
+/* <<<<<<< HEAD */
 
 
 .moving-text {
@@ -172,10 +172,21 @@ body::after {
     font-size: 1.5rem; /* Even smaller font size for phones */
     animation: none; /* Disable animation if text wraps */
   }
-=======
 }
+/* =======
+
 .tt{
   width: 400px;
     margin-top: 30px;
 >>>>>>> 03037414b9fcb18d975739cd78f1bece9a9ec985
-}
+} */
+
+
+
+
+
+
+
+
+
+
