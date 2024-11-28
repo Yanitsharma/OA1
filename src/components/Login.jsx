@@ -41,7 +41,7 @@ const Login = () => {
       style={{ width: "30%", height: "90%", margin: "0 auto" }}
     >
       <center>
-        <h2>Login</h2>
+        <h2 style={{ color: "white" }}>Login</h2>
       </center>
       <Form>
         <Form.Group className="mb-3" controlId="formBasicEmail">
