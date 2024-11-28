@@ -1,44 +1,47 @@
-import styles from "./Login.module.css";
 
-import React, { useState } from "react";
+
+import styles from "./Login.module.css";
+import axios from "axios";
 import { Container, Form, Button } from "react-bootstrap";
+import { useRef } from "react";
 import "../App.css";
 
 const Login = () => {
-  // State for email and password
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  // Handle input change for email
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
+  const emailID=useRef();
+  const passwordId=useRef();
+  
   // Handle input change for password
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
+ 
 
   // Handle form submission
-  const handleLoginClick = (e) => {
-    e.preventDefault(); // Prevent page reload
-    // For now, log the email and password (you can add API calls here)
-    console.log("Email:", email);
-    console.log("Password:", password);
-
-    // Add further logic like form validation, authentication, etc.
-    if (email && password) {
-      // Example: Show an alert on successful submission (replace with actual login logic)
-      alert(`Login successful with email: ${email}`);
-    } else {
-      alert("Please fill in both email and password.");
+  const handleLoginClick = async (e) => {
+    e.preventDefault(); 
+    const emailId = emailID.current.value;
+    const password = passwordId.current.value;
+    const data={
+      emailId:emailId,
+      password:password,
+    }
+    try{
+    const response= await axios.post("http://localhost:4000/api/login", data)
+    console.log(response);
+        console.log(response.status);
+         alert("successfully login");
+    }
+    catch(error){
+      console.log(error);
+      
+  alert('invalid username or password');
+      console.log(error);
     }
   };
 
   return (
-    <Container
+    <Container 
       className={`mt-4 login`}
-      style={{ width: "30%", height: "90%", margin: "0 auto" }}
+      style={{ width: "30%", margin: "0 auto" }}
+      class = {styles.vivek}
+     
     >
       <center>
         <h2 style={{ color: "white" }}>Login</h2>
@@ -51,8 +54,7 @@ const Login = () => {
           <Form.Control
             type="email"
             placeholder="Enter email"
-            value={email}
-            onChange={handleEmailChange} // Add onChange handler for email
+            ref={emailID}
           />
         </Form.Group>
 
@@ -63,8 +65,7 @@ const Login = () => {
           <Form.Control
             type="password"
             placeholder="Password"
-            value={password}
-            onChange={handlePasswordChange} // Add onChange handler for password
+            ref={passwordId}
           />
         </Form.Group>
         <center>

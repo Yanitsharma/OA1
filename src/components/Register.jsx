@@ -1,15 +1,72 @@
-import React, { useState } from "react";
+
 import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
-
+import { useRef } from "react";
+import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 function Register() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleSubmit = (event) => {
+  const userID=useRef();
+  const passwordId=useRef();
+  const handleSubmit =async (event) => {
     event.preventDefault();
-    // Handle registration logic here
-    console.log("Email:", email);
-    console.log("Password:", password);
+    const emailId = userID.current.value;
+    const password = passwordId.current.value;
+    const data={
+      emailId:emailId,
+      password:password,
+    }
+  try{
+   const response=await axios.post("http://localhost:4000/api/signup", data);
+      console.log(response);
+      console.log(response.status);
+      alert("succesfully registered ");
+      // toast.success('registered succesfully', {
+      //   position: "top-right",
+      //   autoClose: 5000,
+      //   hideProgressBar: false,
+      //   closeOnClick: true,
+      //   pauseOnHover: true,
+      //   draggable: true,
+      //   progress: undefined,
+      //   theme: "light",
+      //   transition: Bounce,
+      //   }); 
+  }
+  catch(error){
+    const err=  JSON.parse(error.config.data);
+       if(err.password===""){
+        // toast('empty password', {
+        //   position: "top-right",
+        //   autoClose: 5000,
+        //   hideProgressBar: false,
+        //   closeOnClick: true,
+        //   pauseOnHover: true,
+        //   draggable: true,
+        //   progress: undefined,
+        //   theme: "light",
+        //   transition: Bounce
+        //   });
+        alert("empty password");
+       }
+       if(err.password!==""){
+   if(error.request.status===500){
+    // toast('user already registered', {
+    //   position: "top-right",
+    //   autoClose: 5000,
+    //   hideProgressBar: false,
+    //   closeOnClick: true,
+    //   pauseOnHover: true,
+    //   draggable: true,
+    //   progress: undefined,
+    //   theme: "light",
+    //   transition: Bounce,
+    //   });
+    alert("user already registered");
+    }
+  }
+     console.log(error);
+    
+   }
   };
 
   return (
@@ -19,15 +76,15 @@ function Register() {
           <div className="card mt-5">
             <div className="card-body">
               <h3 className="card-title text-center">Register</h3>
-              <form onSubmit={handleSubmit}>
+              
                 <div className="form-group">
                   <label htmlFor="email">Email address</label>
                   <input
                     type="email"
                     className="form-control"
                     id="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+
+                  ref= {userID}
                     required
                   />
                 </div>
@@ -37,18 +94,16 @@ function Register() {
                     type="password"
                     className="form-control"
                     id="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    ref={passwordId}
                     required
                   />
                 </div>
-                <button type="submit" className="btn btn-primary w-100 mt-3">
+                <button type="submit" className="btn btn-primary w-100 mt-3" onClick={handleSubmit}>
                   Register
                 </button>
-              </form>
               <div className="text-center mt-3">
                 <p>Already have an account?</p>
-                <a href="/" className="btn btn-link">
+                <a href="/login" className="btn btn-link">
                   Login
                 </a>
               </div>
@@ -56,6 +111,18 @@ function Register() {
           </div>
         </div>
       </div>
+      <ToastContainer
+position="top-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light"
+/>
     </div>
   );
 }
