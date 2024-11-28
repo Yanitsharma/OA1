@@ -46,54 +46,57 @@ function Navbar() {
           >
             <li className="nav-item">
               <Link className="nav-link active" aria-current="page" to="/">
-              <button  className="btn btn-outline-success ms-3"
-            type="button"
-            style={{
-              color: "white",
-              background: "blue ",
-              marginTop: "-17px",
-              position:"absolute",
-              right:"500px",
-              border:"solid black",
-             
-            }}>
-                Home
+                <button
+                  className="btn btn-outline-success ms-3"
+                  type="button"
+                  style={{
+                    color: "white",
+                    background: "blue ",
+                    marginTop: "-17px",
+                    position: "absolute",
+                    right: "500px",
+                    border: "solid black",
+                  }}
+                >
+                  Home
                 </button>
               </Link>
             </li>
 
             <li className="nav-item">
               <Link className="nav-link active" aria-current="page" to="/about">
-              <button  className="btn btn-outline-success ms-3"
-            type="button"
-            style={{
-              color: "white",
-              background: "gold ",
-              marginTop: "-17px",
-              position:"absolute",
-              right:"400px",
-              border:"solid black",
-             
-            }}>
-                About Us
+                <button
+                  className="btn btn-outline-success ms-3"
+                  type="button"
+                  style={{
+                    color: "white",
+                    background: "gold ",
+                    marginTop: "-17px",
+                    position: "absolute",
+                    right: "400px",
+                    border: "solid black",
+                  }}
+                >
+                  About Us
                 </button>
               </Link>
             </li>
 
             <li className="nav-item">
               <Link className="nav-link" to="/register">
-              <button  className="btn btn-outline-success ms-3"
-            type="button"
-            style={{
-              color: "white",
-              background: "red ",
-              marginTop: "-17px",
-              position:"absolute",
-              left:"100px",
-              border:"solid black",
-             
-            }}>
-                Register
+                <button
+                  className="btn btn-outline-success ms-3"
+                  type="button"
+                  style={{
+                    color: "white",
+                    background: "red ",
+                    marginTop: "-17px",
+                    position: "absolute",
+                    left: "100px",
+                    border: "solid black",
+                  }}
+                >
+                  Register
                 </button>
               </Link>
             </li>
@@ -101,12 +104,14 @@ function Navbar() {
 
           {/* Login Button */}
           <button
-            className="btn btn-outline-success ms-3"
+            className="btn btn-outline-success ms-3 "
             type="button"
             style={{
               color: "white",
               background: "green ",
               margin: "0px 15px",
+              border: "2px solid black",
+              // padding: "0px",
             }}
             onClick={handleLoginClick}
           >
@@ -121,7 +126,6 @@ function Navbar() {
               aria-label="Search"
               value={searchQuery}
               onChange={handleSearchInputChange}
-
             />
             <button className="btn btn-outline-success" type="submit">
               Search
