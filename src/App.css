@@ -197,3 +197,18 @@ body::after {
   color: white;
   /* margin-bottom: 300px; */
 }
+.ty {
+  width: 80px;
+  height: 30px;
+  padding-top: 2px;
+  background-color: #f8f870;
+}
+.yt{
+  color:green;
+  position: absolute;
+  left: 2px;
+  top: 50px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: inherit;
+  font-weight: 800;
+}
