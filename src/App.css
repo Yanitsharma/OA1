@@ -182,68 +182,57 @@ body::after {
   color: rgb(244, 14, 14); /* Adjust the color */
 }
 
-.register-btn{
-  
-    color: white;
-    background-color: red;
-    margin-top: -17px;
-    position: absolute;
-    left: 100px;
-    border: solid black;
- 
+.register-btn {
+  color: white;
+  background-color: red;
+  margin-top: -17px;
+  position: absolute;
+  left: 100px;
+  border: solid black;
 }
-.register-btn:hover{
+.register-btn:hover {
   /* background-color: #ab1a1a; */
   background-color: red;
   color: black;
 }
 
-
-.home-btn{
-  
+.home-btn {
   color: white;
   background-color: blue;
   margin-top: -17px;
   position: absolute;
   right: 500px;
   border: solid black;
-
 }
 /* <<<<<<< HEAD */
-.home-btn:hover{
-background-color:blue;
-color: black;
+.home-btn:hover {
+  background-color: blue;
+  color: black;
 }
 
-
-.about-btn{
-  
+.about-btn {
   color: white;
   background-color: gold;
   margin-top: -17px;
   position: absolute;
   right: 400px;
   border: solid black;
-
 }
-.about-btn:hover{
-background-color: #eae312;
-color: black;
+.about-btn:hover {
+  background-color: #eae312;
+  color: black;
 }
 
-
-.login-btn{
-  
+.login-btn {
   color: white;
   background-color: green;
   margin: 0px 18px;
   border: 2px solid black;
   /* padding: 7px; */
-
 }
-.login-btn:hover{
-background-color: #3fd44e;
-color: black;
+.login-btn:hover {
+  background-color: #3fd44e;
+  color: black;
 }
 /* ======= */
 .ty {
@@ -252,14 +241,80 @@ color: black;
   padding-top: 2px;
   background-color: #f8f870;
 }
-.yt{
-  color:green;
+.yt {
+  color: green;
   position: absolute;
   left: 2px;
   top: 50px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-style: inherit;
   font-weight: 800;
 }
 /* >>>>>>> 6304f9b6d4e56beba2d9ae94c03383fa80e184fa */
 /*  */
+/* Default Navbar Styles */
+.navbar {
+  position: relative;
+}
+
+
+/* Mobile Navbar Styles */
+.mobile-navbar {
+  position: relative;
+}
+
+/* Hamburger Menu Icon (Only visible on small screens) */
+.menu-icon {
+  display: none;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  background-color: #343a40;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 30px;
+}
+
+/* Vertical Menu (hidden by default) */
+.vertical-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 200px;
+  background-color: #343a40;
+  color: white;
+  height: 100%;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.vertical-menu.show-menu {
+  display: block;
+}
+
+.vertical-menu .nav-item {
+  margin: 20px 0;
+}
+
+.vertical-menu .nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.vertical-menu .nav-link:hover {
+  background-color: #007bff;
+}
+
+/* Hide the menu icon and show it only on small screens */
+@media (max-width: 992px) {
+  .menu-icon {
+    display: block;
+  }
+  .navbar {
+    display: none; /* Hide the original navbar */
+  }
+}

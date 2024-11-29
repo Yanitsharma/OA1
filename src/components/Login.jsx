@@ -1,12 +1,10 @@
-
-
 import styles from "./Login.module.css";
 import axios from "axios";
 import { Container, Form, Button } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../App.css";
 
 const Login = ({ handleIsLoggedIn }) => {
@@ -73,13 +71,16 @@ const Login = ({ handleIsLoggedIn }) => {
   };
 
   return (
-    <Container className={styles.vivek} style={{ width: "30%", margin: "0 auto" }}>
+    <Container
+      className={styles.vivek}
+      style={{ width: "30%", margin: "0 auto" }}
+    >
       <center>
         <h2 style={{ color: "white" }}>Login</h2>
       </center>
       <Form>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label style={{ color: "white", fontSize: "34px" }}>
+          <Form.Label style={{ color: "white", fontSize: "24px" }}>
             Email address
           </Form.Label>
           <Form.Control
@@ -92,7 +93,7 @@ const Login = ({ handleIsLoggedIn }) => {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label style={{ color: "white", fontSize: "34px" }}>
+          <Form.Label style={{ color: "white", fontSize: "24px" }}>
             Password
           </Form.Label>
           <Form.Control

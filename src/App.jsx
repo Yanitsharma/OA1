@@ -1,7 +1,7 @@
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Navbar from "./components/NavBar";
+import MobileNavbar from "./components/MobileNavbar";
 import Footer from "./components/Footer";
 import Sidebar from "./components/Sidebar";
 import About from "./components/About";
@@ -71,6 +71,10 @@ function App() {
           toggleSidebar={toggleSidebar}
           isLoggedIn={isLoggedIn} // Pass the isLoggedIn state
         />
+        {/* Mobile Navbar (Visible on small screens) */}
+        <div className="d-lg-none">
+          <MobileNavbar />
+        </div>
 
         <div
           className="content"
@@ -81,16 +85,23 @@ function App() {
           }}
         >
           <Routes>
-            <Route path="/" element={<Home  isOpen={isSidebarOpen}
-          toggleSidebar={toggleSidebar}
-          isLoggedIn={isLoggedIn}  />} />
+            <Route
+              path="/"
+              element={
+                <Home
+                  isOpen={isSidebarOpen}
+                  toggleSidebar={toggleSidebar}
+                  isLoggedIn={isLoggedIn}
+                />
+              }
+            />
             <Route
               path="/login"
               element={<Login handleIsLoggedIn={handleIsLoggedIn} />}
             />
             <Route path="/about" element={<About />} />
             <Route path="/register" element={<Register />} />
-            
+
             <Route path="/topic" element={<Visa />} />
             <Route path="/topic/media" element={<Media />} />
             <Route path="/topic/deutsche" element={<Deutsche />} />
