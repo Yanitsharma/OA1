@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import "../App.css"; // Import some custom styles
 import { ToastContainer, toast } from "react-toastify";
 import { BsLayoutTextSidebarReverse } from "react-icons/bs";
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = ({ isOpen, toggleSidebar, isLoggedIn }) => {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   // Handle sidebar toggle
   const handleSidebarClick = () => {
     if (isLoggedIn) {
@@ -33,7 +33,9 @@ const Sidebar = ({ isOpen, toggleSidebar, isLoggedIn }) => {
         onClick={handleSidebarClick} // Check if the user is logged in
       >
         {/* <RiSidebarUnfoldFill /> */}
-        <BsLayoutTextSidebarReverse  className={`sidebar-icon ${isOpen ? "open" : ""}`}/>
+        <BsLayoutTextSidebarReverse
+          className={`sidebar-icon ${isOpen ? "open" : ""}`}
+        />
       </div>
       {/* Sidebar */}
       <h3 className="yt">Sidebar</h3>
@@ -41,78 +43,74 @@ const Sidebar = ({ isOpen, toggleSidebar, isLoggedIn }) => {
         <h3 style={{ margin: "30px 0px" }}>DSA Topics</h3>
         <ul>
           <li className="company-name">
-            <Link to="/topic/" onClick={toggleSidebar}>
-              Visa
-            </Link>
+            <Link to="/topic/">Visa</Link>
           </li>
           <li className="company-name">
-            <Link to="/topic/media" onClick={toggleSidebar}>
-              Media.Net
-            </Link>
+            <Link to="/topic/media">Media.Net</Link>
           </li>
           <li className="company-name">
-            <Link to="/topic/deutsche" onClick={toggleSidebar}>
+            <Link to="/topic/deutsche" >
               Deutsche
             </Link>
           </li>
           <li className="company-name">
-            <Link to="/topic/Microsoft" onClick={toggleSidebar}>
+            <Link to="/topic/Microsoft">
               Microsoft
             </Link>
           </li>
           <li className="company-name">
-            <Link to="/topic/BNY" onClick={toggleSidebar}>
+            <Link to="/topic/BNY">
               BNY
             </Link>
           </li>
           <li className="company-name">
-            <Link to="/topic/Salesforce" onClick={toggleSidebar}>
+            <Link to="/topic/Salesforce">
               Salesforce
             </Link>
           </li>
           <li className="company-name">
-            <Link to="/topic/Cisco" onClick={toggleSidebar}>
+            <Link to="/topic/Cisco" >
               Cisco
             </Link>
           </li>
           <li className="company-name">
-            <Link to="/topic/Unifyapps" onClick={toggleSidebar}>
+            <Link to="/topic/Unifyapps" >
               UnifyApps
             </Link>
           </li>
           <li className="company-name">
-            <Link to="/topic/Google" onClick={toggleSidebar}>
+            <Link to="/topic/Google" >
               Google
             </Link>
           </li>
 
           <li className="company-name">
-            <Link to="/topic/Amazon" onClick={toggleSidebar}>
+            <Link to="/topic/Amazon">
               Amazon
             </Link>
           </li>
           <li className="company-name">
-            <Link to="/topic/WellsFargo" onClick={toggleSidebar}>
+            <Link to="/topic/WellsFargo">
               WellsFargo
             </Link>
           </li>
           <li className="company-name">
-            <Link to="/topic/Intuit" onClick={toggleSidebar}>
+            <Link to="/topic/Intuit">
               Intuit
             </Link>
           </li>
           <li className="company-name">
-            <Link to="/topic/MasterCard" onClick={toggleSidebar}>
+            <Link to="/topic/MasterCard">
               MasterCard
             </Link>
           </li>
           <li className="company-name">
-            <Link to="/topic/UiPath" onClick={toggleSidebar}>
+            <Link to="/topic/UiPath" >
               UiPath
             </Link>
           </li>
           <li className="company-name">
-            <Link to="/topic/Jlr" onClick={toggleSidebar}>
+            <Link to="/topic/Jlr" >
               Jlr
             </Link>
           </li>
