@@ -81,7 +81,9 @@ function App() {
           }}
         >
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home  isOpen={isSidebarOpen}
+          toggleSidebar={toggleSidebar}
+          isLoggedIn={isLoggedIn}  />} />
             <Route
               path="/login"
               element={<Login handleIsLoggedIn={handleIsLoggedIn} />}
