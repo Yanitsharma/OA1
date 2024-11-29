@@ -257,7 +257,6 @@ body::after {
   position: relative;
 }
 
-
 /* Mobile Navbar Styles */
 .mobile-navbar {
   position: relative;
@@ -316,5 +315,12 @@ body::after {
   }
   .navbar {
     display: none; /* Hide the original navbar */
+  }
+}
+
+@media (max-width: 992px) {
+  .card {
+    max-width: 250px;
+    max-height: 400px;
   }
 }
