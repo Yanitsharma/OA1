@@ -3,6 +3,8 @@
 import styles from "./Login.module.css";
 import axios from "axios";
 import { Container, Form, Button } from "react-bootstrap";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useRef } from "react";
 import "../App.css";
 
@@ -26,12 +28,31 @@ const Login = () => {
     const response= await axios.post("http://localhost:4000/api/login", data)
     console.log(response);
         console.log(response.status);
-         alert("successfully login");
+        toast.success('succesfully Login', {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          }); 
     }
     catch(error){
       console.log(error);
       
-  alert('invalid username or password');
+      toast('invalid username or password', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      
+        });
       console.log(error);
     }
   };
@@ -79,6 +100,18 @@ const Login = () => {
           </center>
         </center>
       </Form>
+      <ToastContainer
+position="top-right"
+autoClose={5000}
+hideProgressBar={true}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="dark"
+/>
     </Container>
   );
 };
