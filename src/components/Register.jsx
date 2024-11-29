@@ -4,9 +4,11 @@ import { useRef } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+import {useNavigate} from "react-router-dom";
 function Register() {
   const userID=useRef();
   const passwordId=useRef();
+  const navigate = useNavigate();
   const handleSubmit =async (event) => {
     event.preventDefault();
     const emailId = userID.current.value;
@@ -30,6 +32,7 @@ function Register() {
         theme: "light",
         
         }); 
+     navigate("/");
   }
   catch(error){
     const err=  JSON.parse(error.config.data);
