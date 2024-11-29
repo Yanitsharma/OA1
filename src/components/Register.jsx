@@ -19,49 +19,48 @@ function Register() {
    const response=await axios.post("http://localhost:4000/api/signup", data);
       console.log(response);
       console.log(response.status);
-      alert("succesfully registered ");
-      // toast.success('registered succesfully', {
-      //   position: "top-right",
-      //   autoClose: 5000,
-      //   hideProgressBar: false,
-      //   closeOnClick: true,
-      //   pauseOnHover: true,
-      //   draggable: true,
-      //   progress: undefined,
-      //   theme: "light",
-      //   transition: Bounce,
-      //   }); 
+      toast.success('registered succesfully', {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        
+        }); 
   }
   catch(error){
     const err=  JSON.parse(error.config.data);
        if(err.password===""){
-        // toast('empty password', {
-        //   position: "top-right",
-        //   autoClose: 5000,
-        //   hideProgressBar: false,
-        //   closeOnClick: true,
-        //   pauseOnHover: true,
-        //   draggable: true,
-        //   progress: undefined,
-        //   theme: "light",
-        //   transition: Bounce
-        //   });
-        alert("empty password");
+        toast('empty password', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          
+          });
+        // alert("empty password");
        }
        if(err.password!==""){
    if(error.request.status===500){
-    // toast('user already registered', {
-    //   position: "top-right",
-    //   autoClose: 5000,
-    //   hideProgressBar: false,
-    //   closeOnClick: true,
-    //   pauseOnHover: true,
-    //   draggable: true,
-    //   progress: undefined,
-    //   theme: "light",
-    //   transition: Bounce,
-    //   });
-    alert("user already registered");
+    toast('user already registered', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    
+      });
+    // alert("user already registered");
     }
   }
      console.log(error);
