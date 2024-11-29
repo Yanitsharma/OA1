@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
+import { Link } from "react-router-dom";
 
 const Login = ({ handleIsLoggedIn }) => {
   // State to manage form input
@@ -32,7 +33,7 @@ const Login = ({ handleIsLoggedIn }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/login",
+        "https://backend-oa.onrender.com/api/login",
         data
       );
       console.log(response);
@@ -110,7 +111,9 @@ const Login = ({ handleIsLoggedIn }) => {
             Login
           </Button>
           <p style={{ color: "white", margin: "20px 0px", fontSize: "24px" }}>
-            Don't have an account? <a href="/register">Register</a>
+            Don't have an account? <Link to="/register"  >
+              Register
+            </Link>
           </p>
         </center>
       </Form>

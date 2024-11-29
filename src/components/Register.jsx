@@ -4,6 +4,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "../App.css";
 function Register() {
@@ -20,7 +21,7 @@ function Register() {
     };
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/signup",
+        "https://backend-oa.onrender.com/api/signup",
         data
       );
       console.log(response);
@@ -107,9 +108,9 @@ function Register() {
               </button>
               <div className="text-center mt-3">
                 <p>Already have an account?</p>
-                <a href="/login" className="btn btn-link">
-                  Login
-                </a>
+                <Link to="/login"  >
+              Login
+            </Link>
               </div>
             </div>
           </div>

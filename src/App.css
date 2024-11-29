@@ -319,3 +319,12 @@ body::after {
     display: none; /* Hide the original navbar */
   }
 }
+.shiv{
+  text-decoration: none;
+  color: red;
+  font-weight: bolder;
+  font-style: oblique;
+  font-family: 'Times New Roman', Times, serif;
+
+}
+

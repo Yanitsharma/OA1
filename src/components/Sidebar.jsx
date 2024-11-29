@@ -40,77 +40,81 @@ const Sidebar = ({ isOpen, toggleSidebar, isLoggedIn }) => {
       {/* Sidebar */}
       <h3 className="yt">Sidebar</h3>
       <div className={`sidebar ${isOpen ? "open" : ""}`}>
-        <h3 style={{ margin: "30px 0px" }}>DSA Topics</h3>
+        <h3 style={{ margin: "30px 0px" }}>CompanyWise Questions</h3>
         <ul>
-          <li className="company-name">
-            <Link to="/topic/">Visa</Link>
+         <li className="company-name">
+            <Link to="/topic/"  className="shiv">
+              Visa
+            </Link>
           </li>
           <li className="company-name">
-            <Link to="/topic/media">Media.Net</Link>
+            <Link to="/topic/media"  className="shiv">
+              Media.Net
+            </Link>
           </li>
           <li className="company-name">
-            <Link to="/topic/deutsche" >
+            <Link to="/topic/deutsche" className="shiv">
               Deutsche
             </Link>
           </li>
           <li className="company-name">
-            <Link to="/topic/Microsoft">
+            <Link to="/topic/Microsoft"  className="shiv">
               Microsoft
             </Link>
           </li>
           <li className="company-name">
-            <Link to="/topic/BNY">
+            <Link to="/topic/BNY"  className="shiv">
               BNY
             </Link>
           </li>
           <li className="company-name">
-            <Link to="/topic/Salesforce">
+            <Link to="/topic/Salesforce"  className="shiv">
               Salesforce
             </Link>
           </li>
           <li className="company-name">
-            <Link to="/topic/Cisco" >
+            <Link to="/topic/Cisco" className="shiv">
               Cisco
             </Link>
           </li>
           <li className="company-name">
-            <Link to="/topic/Unifyapps" >
+            <Link to="/topic/Unifyapps"  className="shiv">
               UnifyApps
             </Link>
           </li>
           <li className="company-name">
-            <Link to="/topic/Google" >
+            <Link to="/topic/Google" className="shiv">
               Google
             </Link>
           </li>
 
           <li className="company-name">
-            <Link to="/topic/Amazon">
+            <Link to="/topic/Amazon"  className="shiv">
               Amazon
             </Link>
           </li>
           <li className="company-name">
-            <Link to="/topic/WellsFargo">
+            <Link to="/topic/WellsFargo"  className="shiv">
               WellsFargo
             </Link>
           </li>
           <li className="company-name">
-            <Link to="/topic/Intuit">
+            <Link to="/topic/Intuit"  className="shiv">
               Intuit
             </Link>
           </li>
           <li className="company-name">
-            <Link to="/topic/MasterCard">
+            <Link to="/topic/MasterCard"  className="shiv">
               MasterCard
             </Link>
           </li>
           <li className="company-name">
-            <Link to="/topic/UiPath" >
+            <Link to="/topic/UiPath"  className="shiv">
               UiPath
             </Link>
           </li>
           <li className="company-name">
-            <Link to="/topic/Jlr" >
+            <Link to="/topic/Jlr"  className="shiv">
               Jlr
             </Link>
           </li>
