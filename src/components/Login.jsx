@@ -74,7 +74,7 @@ const Login = ({ handleIsLoggedIn }) => {
   return (
     <Container
       className={styles.vivek}
-      style={{ width: "30%", margin: "0 auto" }}
+      // style={{ width: "30%", margin: "0 auto" }}
 
     >
       <center>

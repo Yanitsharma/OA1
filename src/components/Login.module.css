@@ -1,17 +1,19 @@
 .vivek {
   height: 100%;
-  margin: 0;
+  width: 30%;
+  margin: 0 auto; /* Centers the element horizontally */
   background-image: url("../../public/19187761.jpg"); /* Replace with your image URL */
-  background-size: cover; /* Ensure the image covers the entire body */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent repeating the image */
-  position: relative; /* Make sure the background is properly positioned */
+  background-size: cover; /* Ensure the image fills the area proportionally */
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative; /* Ensures proper positioning */
 }
 
+/* Media query for smaller screens */
 @media (max-width: 992px) {
   .vivek {
-    max-width: 250px;
-    height: 500px;
-    font-size: 10px;
+    width: 100%; /* Let the width take up full available space */
+    height: 100%; /* Adjust height proportionally */
+    font-size: 10px; /* Optional: Adjust font size for small screens */
   }
 }
