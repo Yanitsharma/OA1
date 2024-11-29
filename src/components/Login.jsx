@@ -2,7 +2,13 @@
 import styles from "./Login.module.css";
 import axios from "axios";
 import { Container, Form, Button } from "react-bootstrap";
+<<<<<<< HEAD
 import { useRef, useState } from "react";
+=======
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useRef } from "react";
+>>>>>>> origin/main
 import "../App.css";
 
 const Login = ({ handleIsLoggedIn }) => {
@@ -26,6 +32,7 @@ const Login = ({ handleIsLoggedIn }) => {
 
   // Handle form submission
   const handleLoginClick = async (e) => {
+<<<<<<< HEAD
     e.preventDefault();
     const { emailId, password } = formData;
     const data = {
@@ -48,6 +55,44 @@ const Login = ({ handleIsLoggedIn }) => {
         password: "",
       });
     } catch (error) {
+=======
+    e.preventDefault(); 
+    const emailId = emailID.current.value;
+    const password = passwordId.current.value;
+    const data={
+      emailId:emailId,
+      password:password,
+    }
+    try{
+    const response= await axios.post("http://localhost:4000/api/login", data)
+    console.log(response);
+        console.log(response.status);
+        toast.success('succesfully Login', {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          }); 
+    }
+    catch(error){
+      console.log(error);
+      
+      toast('invalid username or password', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      
+        });
+>>>>>>> origin/main
       console.log(error);
       alert("Invalid username or password");
     }
@@ -105,6 +150,18 @@ const Login = ({ handleIsLoggedIn }) => {
           </center>
         </center>
       </Form>
+      <ToastContainer
+position="top-right"
+autoClose={5000}
+hideProgressBar={true}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="dark"
+/>
     </Container>
   );
 };
