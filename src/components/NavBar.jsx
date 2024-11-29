@@ -47,7 +47,7 @@ function Navbar() {
             <li className="nav-item">
               <Link className="nav-link active" aria-current="page" to="/">
                 <button
-                  className="btn btn-outline-success ms-3"
+                  className="btn btn-outline-success ms-3 "
                   type="button"
                   style={{
                     color: "white",
@@ -56,6 +56,7 @@ function Navbar() {
                     position: "absolute",
                     right: "500px",
                     border: "solid black",
+                    
                   }}
                 >
                   Home
