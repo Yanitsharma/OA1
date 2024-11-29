@@ -20,7 +20,7 @@ function Register() {
     };
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/signup",
+        "https://backend-oa.onrender.com/api/signup",
         data
       );
       console.log(response);
