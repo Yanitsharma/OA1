@@ -1,9 +1,8 @@
-
-
 import React from "react";
 import { Link } from "react-router-dom";
 import "../App.css"; // Import some custom styles
 import { ToastContainer, toast } from "react-toastify";
+import { BsLayoutTextSidebarReverse } from "react-icons/bs";
 
 const Sidebar = ({ isOpen, toggleSidebar, isLoggedIn }) => {
   // Handle sidebar toggle
@@ -30,9 +29,8 @@ const Sidebar = ({ isOpen, toggleSidebar, isLoggedIn }) => {
         className="hamburger-icon"
         onClick={handleSidebarClick} // Check if the user is logged in
       >
-        <div className="line"></div>
-        <div className="line"></div>
-        <div className="line"></div>
+        {/* <RiSidebarUnfoldFill /> */}
+        <BsLayoutTextSidebarReverse  className={`sidebar-icon ${isOpen ? "open" : ""}`}/>
       </div>
       {/* Sidebar */}
       <div className={`sidebar ${isOpen ? "open" : ""}`}>

@@ -68,7 +68,7 @@ body::after {
 
 .sidebar {
   width: 250px;
-  background-color: #f4f4f4;
+  background-color: #f8f870;
   height: 100vh;
   position: fixed;
   top: 0;
@@ -80,6 +80,7 @@ body::after {
 
 .sidebar.open {
   left: 0;
+  color: rgb(85, 17, 188);
 }
 
 .hamburger-icon {
@@ -127,7 +128,7 @@ body::after {
 }
 
 .moving-text {
-  margin: 250px 0px;
+  margin-top: 100px;
   font-size: 3rem;
   font-weight: bold;
   color: white;
@@ -135,6 +136,9 @@ body::after {
   display: inline-block;
   animation: shrinkGrow 1.5s ease-in-out infinite;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @keyframes shrinkGrow {
@@ -168,3 +172,28 @@ body::after {
   margin: 5px;
 }
 
+.sidebar-icon {
+  font-size: 50px !important; /* Force the size to apply */
+  cursor: pointer;
+  color: rgb(216, 252, 13);
+  /* border: 2px solid black; */
+}
+.sidebar-icon.open {
+  color: rgb(244, 14, 14); /* Adjust the color */
+}
+
+/* For Navbar buttons */
+.navbar .nav-link button {
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+  color: wheat;
+}
+
+.navbar .nav-link button:hover {
+  background-color: #818178; /* Darker blue for Home button */
+  color: white; /* Change text color to white */
+}
+
+.text {
+  color: white;
+  /* margin-bottom: 300px; */
+}

@@ -1,3 +1,5 @@
+
+
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
@@ -6,6 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 function Navbar() {
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
+  const [isHovered, setIsHovered] = useState(false); // State for hover effect
 
   // Function to handle search input changes
   const handleSearchInputChange = (e) => {
@@ -23,6 +26,12 @@ function Navbar() {
   // Function to navigate to login page
   const handleLoginClick = () => {
     navigate("/login");
+  };
+
+  const loginButtonStyle = {
+    marginTop: "8px",
+    color: isHovered ? "yellow" : "wheat", // Change color on hover
+    backgroundColor: isHovered ? " #818178" : "", // Change background color on hover
   };
 
   return (
@@ -46,19 +55,7 @@ function Navbar() {
           >
             <li className="nav-item">
               <Link className="nav-link active" aria-current="page" to="/">
-                <button
-                  className="btn btn-outline-success ms-3 "
-                  type="button"
-                  style={{
-                    color: "white",
-                    background: "blue ",
-                    marginTop: "-17px",
-                    position: "absolute",
-                    right: "500px",
-                    border: "solid black",
-                    
-                  }}
-                >
+                <button className="btn btn-outline-success ms-3 " type="button">
                   Home
                 </button>
               </Link>
@@ -66,18 +63,7 @@ function Navbar() {
 
             <li className="nav-item">
               <Link className="nav-link active" aria-current="page" to="/about">
-                <button
-                  className="btn btn-outline-success ms-3"
-                  type="button"
-                  style={{
-                    color: "white",
-                    background: "gold ",
-                    marginTop: "-17px",
-                    position: "absolute",
-                    right: "400px",
-                    border: "solid black",
-                  }}
-                >
+                <button className="btn btn-outline-success ms-3" type="button">
                   About Us
                 </button>
               </Link>
@@ -85,39 +71,26 @@ function Navbar() {
 
             <li className="nav-item">
               <Link className="nav-link" to="/register">
-                <button
-                  className="btn btn-outline-success ms-3"
-                  type="button"
-                  style={{
-                    color: "white",
-                    background: "red ",
-                    marginTop: "-17px",
-                    position: "absolute",
-                    left: "100px",
-                    border: "solid black",
-                  }}
-                >
+                <button className="btn btn-outline-success ms-3" type="button">
                   Register
                 </button>
               </Link>
             </li>
-          </ul>
 
-          {/* Login Button */}
-          <button
-            className="btn btn-outline-success ms-3 "
-            type="button"
-            style={{
-              color: "white",
-              background: "green ",
-              margin: "0px 15px",
-              border: "2px solid black",
-              // padding: "0px",
-            }}
-            onClick={handleLoginClick}
-          >
-            Login
-          </button>
+            {/* Login Button */}
+            <li className="nav-item">
+              <button
+                className="btn btn-outline-success ms-3 "
+                type="button"
+                onClick={handleLoginClick}
+                style={loginButtonStyle}
+                onMouseEnter={() => setIsHovered(true)} // Set hover state to true
+                onMouseLeave={() => setIsHovered(false)} // Set hover state to false
+              >
+                Login
+              </button>
+            </li>
+          </ul>
           {/* Search Bar */}
           <form className="d-flex" onSubmit={handleSearchSubmit}>
             <input
