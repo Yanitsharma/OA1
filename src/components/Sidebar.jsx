@@ -3,12 +3,15 @@ import { Link } from "react-router-dom";
 import "../App.css"; // Import some custom styles
 import { ToastContainer, toast } from "react-toastify";
 import { BsLayoutTextSidebarReverse } from "react-icons/bs";
+import {useNavigate} from "react-router-dom"
 
 const Sidebar = ({ isOpen, toggleSidebar, isLoggedIn }) => {
+  const navigate=useNavigate();
   // Handle sidebar toggle
   const handleSidebarClick = () => {
     if (isLoggedIn) {
       toggleSidebar(); // Open sidebar only if logged in
+      navigate("/sidebar");
     } else {
       toast.error("Firstly register and then Login", {
         position: "top-right",
@@ -33,6 +36,7 @@ const Sidebar = ({ isOpen, toggleSidebar, isLoggedIn }) => {
         <BsLayoutTextSidebarReverse  className={`sidebar-icon ${isOpen ? "open" : ""}`}/>
       </div>
       {/* Sidebar */}
+      <h3 className="yt">Sidebar</h3>
       <div className={`sidebar ${isOpen ? "open" : ""}`}>
         <h3 style={{ margin: "30px 0px" }}>DSA Topics</h3>
         <ul>

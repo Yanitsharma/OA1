@@ -88,6 +88,7 @@ function App() {
             />
             <Route path="/about" element={<About />} />
             <Route path="/register" element={<Register />} />
+            
             <Route path="/topic" element={<Visa />} />
             <Route path="/topic/media" element={<Media />} />
             <Route path="/topic/deutsche" element={<Deutsche />} />

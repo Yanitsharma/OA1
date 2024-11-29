@@ -209,6 +209,7 @@ body::after {
   border: solid black;
 
 }
+/* <<<<<<< HEAD */
 .home-btn:hover{
 background-color:blue;
 color: black;
@@ -244,3 +245,21 @@ color: black;
 background-color: #3fd44e;
 color: black;
 }
+/* ======= */
+.ty {
+  width: 80px;
+  height: 30px;
+  padding-top: 2px;
+  background-color: #f8f870;
+}
+.yt{
+  color:green;
+  position: absolute;
+  left: 2px;
+  top: 50px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: inherit;
+  font-weight: 800;
+}
+/* >>>>>>> 6304f9b6d4e56beba2d9ae94c03383fa80e184fa */
+/*  */
