@@ -30,7 +30,7 @@ function Navbar() {
 
   const loginButtonStyle = {
     marginTop: "8px",
-    color: isHovered ? "yellow" : "wheat", // Change color on hover
+    color: isHovered ? "" : "wheat", // Change color on hover
     backgroundColor: isHovered ? " #818178" : "", // Change background color on hover
   };
 
