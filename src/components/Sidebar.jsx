@@ -3,6 +3,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../App.css"; // Import some custom styles
+import { ToastContainer, toast } from "react-toastify";
 
 const Sidebar = ({ isOpen, toggleSidebar, isLoggedIn }) => {
   // Handle sidebar toggle
@@ -10,7 +11,15 @@ const Sidebar = ({ isOpen, toggleSidebar, isLoggedIn }) => {
     if (isLoggedIn) {
       toggleSidebar(); // Open sidebar only if logged in
     } else {
-      alert("Please login first to access the sidebar.");
+      toast.error("Firstly register and then Login", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "dark",
+      });
     }
   };
 
@@ -108,6 +117,18 @@ const Sidebar = ({ isOpen, toggleSidebar, isLoggedIn }) => {
           {/* Add more topics as needed */}
         </ul>
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={true}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </div>
   );
 };

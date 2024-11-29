@@ -127,6 +127,7 @@ import { Container, Form, Button } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
+import {useNavigate} from "react-router-dom";
 import "../App.css";
 
 const Login = ({ handleIsLoggedIn }) => {
@@ -135,7 +136,7 @@ const Login = ({ handleIsLoggedIn }) => {
     emailId: "",
     password: "",
   });
-
+  const navigate = useNavigate();
   // Handle input change
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -172,6 +173,7 @@ const Login = ({ handleIsLoggedIn }) => {
 
       // Trigger login state change
       handleIsLoggedIn();
+      navigate("/");
 
       // Reset form data
       setFormData({ emailId: "", password: "" });
