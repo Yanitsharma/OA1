@@ -40,7 +40,7 @@ const Sidebar = ({ isOpen, toggleSidebar, isLoggedIn }) => {
       {/* Sidebar */}
       <h3 className="yt">Sidebar</h3>
       <div className={`sidebar ${isOpen ? "open" : ""}`}>
-        <h3 style={{ margin: "30px 0px" }}>DSA Topics</h3>
+        <h3 style={{ margin: "30px 0px" }}>CompanyWise Questions</h3>
         <ul>
          <li className="company-name">
             <Link to="/topic/" onClick={toggleSidebar} className="shiv">
