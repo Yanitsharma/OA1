@@ -102,7 +102,7 @@ body::after {
   margin: 3px 0;
 }
 .login {
-  height: 100%;
+  height: 90%;
   margin: 0;
   background-image: url("../public/19187761.jpg");
   background-size: cover;
@@ -167,4 +167,3 @@ body::after {
 .company-name {
   margin: 5px;
 }
-

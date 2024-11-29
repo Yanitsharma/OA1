@@ -1,17 +1,30 @@
+
+
 import React from "react";
 import { Link } from "react-router-dom";
 import "../App.css"; // Import some custom styles
 
-const Sidebar = ({ isOpen, toggleSidebar }) => {
+const Sidebar = ({ isOpen, toggleSidebar, isLoggedIn }) => {
+  // Handle sidebar toggle
+  const handleSidebarClick = () => {
+    if (isLoggedIn) {
+      toggleSidebar(); // Open sidebar only if logged in
+    } else {
+      alert("Please login first to access the sidebar.");
+    }
+  };
+
   return (
     <div>
       {/* Hamburger Icon */}
-      <div className="hamburger-icon" onClick={toggleSidebar}>
+      <div
+        className="hamburger-icon"
+        onClick={handleSidebarClick} // Check if the user is logged in
+      >
         <div className="line"></div>
         <div className="line"></div>
         <div className="line"></div>
       </div>
-
       {/* Sidebar */}
       <div className={`sidebar ${isOpen ? "open" : ""}`}>
         <h3 style={{ margin: "30px 0px" }}>DSA Topics</h3>

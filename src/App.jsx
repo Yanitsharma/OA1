@@ -1,3 +1,4 @@
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Navbar from "./components/Navbar";
@@ -30,11 +31,17 @@ import Jlr from "./components/Jlr";
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const sidebarRef = useRef(null);
 
   // Toggle Sidebar
   const toggleSidebar = () => {
     setIsSidebarOpen((prev) => !prev);
+  };
+
+  // Handle login state change
+  const handleIsLoggedIn = () => {
+    setIsLoggedIn(true);
   };
 
   // Close sidebar when clicking outside
@@ -59,7 +66,11 @@ function App() {
       <div className="app-wrapper">
         <Navbar />
 
-        <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+        <Sidebar
+          isOpen={isSidebarOpen}
+          toggleSidebar={toggleSidebar}
+          isLoggedIn={isLoggedIn} // Pass the isLoggedIn state
+        />
 
         <div
           className="content"
@@ -71,7 +82,10 @@ function App() {
         >
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
+            <Route
+              path="/login"
+              element={<Login handleIsLoggedIn={handleIsLoggedIn} />}
+            />
             <Route path="/about" element={<About />} />
             <Route path="/register" element={<Register />} />
             <Route path="/topic" element={<Visa />} />
