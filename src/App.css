@@ -182,18 +182,65 @@ body::after {
   color: rgb(244, 14, 14); /* Adjust the color */
 }
 
-/* For Navbar buttons */
-.navbar .nav-link button {
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
-  color: wheat;
+.register-btn{
+  
+    color: white;
+    background-color: red;
+    margin-top: -17px;
+    position: absolute;
+    left: 100px;
+    border: solid black;
+ 
+}
+.register-btn:hover{
+  /* background-color: #ab1a1a; */
+  background-color: red;
+  color: black;
 }
 
-.navbar .nav-link button:hover {
-  background-color: #818178; /* Darker blue for Home button */
-  color: white; /* Change text color to white */
-}
 
-.text {
+.home-btn{
+  
   color: white;
-  /* margin-bottom: 300px; */
+  background-color: blue;
+  margin-top: -17px;
+  position: absolute;
+  right: 500px;
+  border: solid black;
+
+}
+.home-btn:hover{
+background-color:blue;
+color: black;
+}
+
+
+.about-btn{
+  
+  color: white;
+  background-color: gold;
+  margin-top: -17px;
+  position: absolute;
+  right: 400px;
+  border: solid black;
+
+}
+.about-btn:hover{
+background-color: #eae312;
+color: black;
+}
+
+
+.login-btn{
+  
+  color: white;
+  background-color: green;
+  margin: 0px 18px;
+  border: 2px solid black;
+  /* padding: 7px; */
+
+}
+.login-btn:hover{
+background-color: #3fd44e;
+color: black;
 }
