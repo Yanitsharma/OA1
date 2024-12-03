@@ -2,7 +2,7 @@ import "../App.css";
 
 function Footer() {
   return (
-    <footer className="bg-dark text-white pt-4">
+    <footer className="bg-dark text-white pt-4" style={{ marginTop: "25%"}}>
       <div className="container">
         <div className="row">
           <div className="col-md-4">

@@ -103,8 +103,8 @@ body::after {
   margin: 3px 0;
 }
 .login {
-  height: 90%;
-  margin: 0;
+  height: 100%;
+  margin-top: 25px;
   background-image: url("../public/19187761.jpg");
   background-size: cover;
   background-position: center;
@@ -269,12 +269,16 @@ body::after {
   top: 10px;
   right: 10px;
   cursor: pointer;
-  background-color: #343a40;
-  color: white;
+  background-color: transparent; /* No background */
+  color: lightblue; /* Light text color */
   padding: 10px;
-  border-radius: 5px;
   font-size: 30px;
-  z-index: 10; /* Ensures it stays on top of the vertical menu */
+  z-index: 10; /* Keeps it on top */
+}
+
+.menu-icon:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Subtle hover effect */
+  border-radius: 5px;
 }
 
 /* Vertical Menu (hidden by default) */
@@ -319,12 +323,10 @@ body::after {
     display: none; /* Hide the original navbar */
   }
 }
-.shiv{
+.shiv {
   text-decoration: none;
   color: red;
   font-weight: bolder;
   font-style: oblique;
-  font-family: 'Times New Roman', Times, serif;
-
+  font-family: "Times New Roman", Times, serif;
 }
-
