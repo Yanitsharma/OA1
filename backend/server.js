@@ -11,7 +11,6 @@ app.post('/api/signup',async (req,res)=>{
   try{
     const data=req.body;
     const newUser=new User(data);
-
     const response=await newUser.save();
     console.log('data saved');
      res.status(200).json(response);
