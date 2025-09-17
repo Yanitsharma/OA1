@@ -26,11 +26,13 @@ const Sidebar = ({ isOpen, toggleSidebar, isLoggedIn }) => {
   };
 
   return (
-    <div>
+     <>
+    <div >
       {/* Hamburger Icon */}
       <div
         className="hamburger-icon"
-        onClick={handleSidebarClick} // Check if the user is logged in
+        onClick={handleSidebarClick}
+         // Check if the user is logged in
       >
         {/* <RiSidebarUnfoldFill /> */}
         <BsLayoutTextSidebarReverse
@@ -134,6 +136,8 @@ const Sidebar = ({ isOpen, toggleSidebar, isLoggedIn }) => {
         theme="dark"
       />
     </div>
+   
+   </>
   );
 };
 

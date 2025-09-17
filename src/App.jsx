@@ -64,7 +64,7 @@ function App() {
   return (
     <Router>
       <div className="app-wrapper">
-        <Navbar />
+        <Navbar toggleSidebar={toggleSidebar} isLoggedIn={isLoggedIn} isSidebarOpen={isSidebarOpen}/>
 
         <Sidebar
           isOpen={isSidebarOpen}

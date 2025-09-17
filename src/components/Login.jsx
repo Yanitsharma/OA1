@@ -7,6 +7,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
 import { Link } from "react-router-dom";
+import {GoogleLogin} from "@react-oauth/google";
 
 const Login = ({ handleIsLoggedIn }) => {
   // State to manage form input
@@ -71,13 +72,10 @@ const Login = ({ handleIsLoggedIn }) => {
     }
   };
 
+
   return (
     <Container
       className={styles.vivek}
-      
-    
-     
-
     >
       <center>
         <h2 style={{ color: "white" }}>Login</h2>
@@ -109,7 +107,7 @@ const Login = ({ handleIsLoggedIn }) => {
           />
         </Form.Group>
         <center>
-          <Button variant="primary" type="submit" onClick={handleLoginClick}>
+          <Button variant="primary" type="submit" onClick={handleLoginClick}  >
             Login
           </Button>
           <p style={{ color: "white", margin: "20px 0px", fontSize: "24px" }}>
@@ -131,6 +129,12 @@ const Login = ({ handleIsLoggedIn }) => {
         pauseOnHover
         theme="dark"
       />
+      <GoogleLogin onSuccess={(credentialResponse)=>{
+        console.log(credentialResponse);
+         handleIsLoggedIn();
+        navigate("/");
+      }} onError={()=>{console.log("Login failed")}}/>
+      
     </Container>
   );
 };

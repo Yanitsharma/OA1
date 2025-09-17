@@ -3,7 +3,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 import { Link, useNavigate } from "react-router-dom";
 
-function Navbar() {
+
+const Navbar = ({toggleSidebar,isLoggedIn,isSidebarOpen}) =>{
+  const handleClick=()=>{
+    if (isLoggedIn) {
+    {isSidebarOpen ? toggleSidebar() : ""}
+      // Open sidebar only if logged in
+      navigate("/sidebar");
+    }
+  }
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -21,9 +29,7 @@ function Navbar() {
   };
 
   // Function to navigate to login page
-  const handleLoginClick = () => {
-    navigate("/login");
-  };
+  
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-success">
@@ -45,15 +51,16 @@ function Navbar() {
             style={{ margin: "0px 750px", fontSize: "20px" }}
           >
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/">
-                <button className="btn btn-outline-success ms-3 home-btn " type="button">
+              
+              <Link className="nav-link active" aria-current="page"  to="/" onClick={handleClick}>
+                <button className="btn btn-outline-success ms-3 home-btn " type="button" >
                   Home
                 </button>
               </Link>
+             
             </li>
-
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/about">
+              <Link className="nav-link active" aria-current="page" to="/about" onClick={handleClick}>
                 <button
                   className="btn btn-outline-success ms-3 about-btn"
                   type="button"
@@ -62,29 +69,30 @@ function Navbar() {
                 </button>
               </Link>
             </li>
-
             <li className="nav-item">
-              <Link className="nav-link" to="/register">
+              <Link className="nav-link" to="/register" onClick={handleClick}>
                 <button
                   className="btn btn-outline-success ms-3 register-btn"
                   type="button"
-
                 >
                   Register
                 </button>
               </Link>
             </li>
           </ul>
-
+           
           {/* Login Button */}
+          <Link className="nav-link" to="/login" onClick={handleClick}>
           <button
             className="btn btn-outline-success ms-3 login-btn"
             type="button"
-
-            onClick={handleLoginClick}
+           
           >
             Login
           </button>
+          </Link>
+         
+          
           {/* Search Bar */}
           <form className="d-flex" onSubmit={handleSearchSubmit}>
             <input
@@ -102,6 +110,8 @@ function Navbar() {
         </div>
       </div>
     </nav>
+    
+    
   );
 }
 
