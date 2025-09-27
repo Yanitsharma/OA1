@@ -10,18 +10,25 @@ import "../App.css";
 function Register() {
   const userID = useRef();
   const passwordId = useRef();
+  const emailRegex = /\S+@\S+\.\S+/;
   const navigate = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
     const emailId = userID.current.value;
     const password = passwordId.current.value;
+    if (password.length < 8) {
+    toast.error("Password must be at least 8 characters long.", {
+      position: "top-right",
+    });
+    return; 
+  }
     const data = {
       emailId: emailId,
       password: password,
     };
     try {
       const response = await axios.post(
-        "https://backend-oa.onrender.com/api/signup",
+        "http://localhost:4000/api/signup",
         data
       );
       console.log(response);
@@ -37,10 +44,12 @@ function Register() {
         theme: "light",
       });
       navigate("/");
+      event.target.form.reset();
     } catch (error) {
       const err = JSON.parse(error.config.data);
-      if (err.password === "") {
-        toast("empty password", {
+      const validEmail=err.emailId;
+      if (!emailRegex.test(validEmail)) {
+        toast("YOU HAVE ENTERED WRONG EMAIL ID FORMAT", {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -50,11 +59,11 @@ function Register() {
           progress: undefined,
           theme: "light",
         });
-        // alert("empty password");
       }
-      if (err.password !== "") {
+      
+    else if (err.password !== "") {
         if (error.request.status === 500) {
-          toast("user already registered", {
+          toast("USER ALREADY REGISTERED", {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -64,7 +73,6 @@ function Register() {
             progress: undefined,
             theme: "light",
           });
-          // alert("user already registered");
         }
       }
       console.log(error);
@@ -81,9 +89,10 @@ function Register() {
 
               <div className="form-group">
                 <label htmlFor="email">Email address</label>
-                <input
+                <input 
                   type="email"
                   className="form-control"
+                  placeholder="yanit@gmail.com"
                   id="email"
                   ref={userID}
                   required
@@ -94,6 +103,7 @@ function Register() {
                 <input
                   type="password"
                   className="form-control"
+                  placeholder="sckbjb#@..."
                   id="password"
                   ref={passwordId}
                   required

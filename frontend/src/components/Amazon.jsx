@@ -1,6 +1,6 @@
 import yanitSharma from "../../public/yt.png"
 import yanit from "../../public/ty.png"
-import './Visa.css'; // optional: for additional styling
+import './Visa.css';
 const Amazon = () => {
   return (
     <>

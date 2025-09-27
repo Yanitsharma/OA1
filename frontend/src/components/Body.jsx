@@ -1,12 +1,9 @@
 import { ToastContainer, toast } from "react-toastify";
 import "../App.css";
-import {useNavigate} from "react-router-dom";
-const Body = ({  toggleSidebar, isLoggedIn }) => {
-const navigate=useNavigate();
+const Body = ({ toggleSidebar, isLoggedIn }) => {
   const handleClick = () => {
     if (isLoggedIn) {
-      toggleSidebar(); // Open sidebar only if logged in
-      navigate("/sidebar");
+      toggleSidebar(); 
     } else {
       toast.error("Firstly register and then Login", {
         position: "top-right",
@@ -21,7 +18,6 @@ const navigate=useNavigate();
   }
   return (
     <>
-      {" "}
       <center>
         <h1 className="moving-text">
           Welcome to our Online Assessment WebSite....
@@ -31,7 +27,6 @@ const navigate=useNavigate();
           <button type="button" class="btn btn-info ty" onClick={handleClick}>Info</button>
         </h4>
        
-        {" "}
         <ToastContainer
         position="top-right"
         autoClose={5000}

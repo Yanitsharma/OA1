@@ -3,43 +3,28 @@ import axios from "axios";
 import { Container, Form, Button } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useState } from "react";
+import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
 import { Link } from "react-router-dom";
 import {GoogleLogin} from "@react-oauth/google";
-
 const Login = ({ handleIsLoggedIn }) => {
-  // State to manage form input
-  const [formData, setFormData] = useState({
-    emailId: "",
-    password: "",
-  });
+   const emailRef = useRef(null);
+  const passwordRef = useRef(null);
   const navigate = useNavigate();
-  // Handle input change
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
-
-  // Handle form submission
-  const handleLoginClick = async (e) => {
-    e.preventDefault();
-    const { emailId, password } = formData;
-
+  const handleLoginClick = async (event) => {
+    event.preventDefault();
+    const emailId = emailRef.current.value;
+    const password = passwordRef.current.value;
+    
     const data = { emailId, password };
-
     try {
       const response = await axios.post(
-        "https://backend-oa.onrender.com/api/login",
+        "http://localhost:4000/api/login",
         data
       );
       console.log(response);
 
-      // Display success toast notification
       toast.success("Successfully logged in!", {
         position: "top-right",
         autoClose: 3000,
@@ -49,17 +34,11 @@ const Login = ({ handleIsLoggedIn }) => {
         draggable: true,
         theme: "dark",
       });
-
-      // Trigger login state change
       handleIsLoggedIn();
       navigate("/");
-
-      // Reset form data
-      setFormData({ emailId: "", password: "" });
+      event.target.form.reset();
     } catch (error) {
       console.error(error);
-
-      // Display error toast notification
       toast.error("Invalid username or password", {
         position: "top-right",
         autoClose: 5000,
@@ -89,8 +68,7 @@ const Login = ({ handleIsLoggedIn }) => {
             type="email"
             placeholder="Enter email"
             name="emailId"
-            value={formData.emailId}
-            onChange={handleChange}
+           ref={emailRef}
           />
         </Form.Group>
 
@@ -102,8 +80,7 @@ const Login = ({ handleIsLoggedIn }) => {
             type="password"
             placeholder="Password"
             name="password"
-            value={formData.password}
-            onChange={handleChange}
+            ref={passwordRef}
           />
         </Form.Group>
         <center>
@@ -117,7 +94,7 @@ const Login = ({ handleIsLoggedIn }) => {
           </p>
         </center>
       </Form>
-      <ToastContainer
+    <ToastContainer
         position="top-right"
         autoClose={5000}
         hideProgressBar={true}
@@ -134,7 +111,6 @@ const Login = ({ handleIsLoggedIn }) => {
          handleIsLoggedIn();
         navigate("/");
       }} onError={()=>{console.log("Login failed")}}/>
-      
     </Container>
   );
 };

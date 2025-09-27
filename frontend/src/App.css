@@ -16,6 +16,8 @@ body,
 .content {
   flex: 1;
   padding: 20px;
+ position: relative; 
+  z-index: 1;   
 }
 
 footer {
@@ -164,7 +166,7 @@ body::after {
 @media (max-width: 480px) {
   .moving-text {
     font-size: 1.5rem;
-    /* animation: none; */
+    
     animation: shrinkGrow 1.5s ease-in-out 1;
   }
 }
@@ -174,13 +176,13 @@ body::after {
 }
 
 .sidebar-icon {
-  font-size: 50px !important; /* Force the size to apply */
+  font-size: 50px !important; 
   cursor: pointer;
   color: rgb(216, 252, 13);
-  /* border: 2px solid black; */
+ 
 }
 .sidebar-icon.open {
-  color: rgb(244, 14, 14); /* Adjust the color */
+  color: rgb(244, 14, 14); 
 }
 
 .register-btn {
@@ -192,7 +194,7 @@ body::after {
   border: solid black;
 }
 .register-btn:hover {
-  /* background-color: #ab1a1a; */
+ 
   background-color: red;
   color: black;
 }
@@ -205,7 +207,7 @@ body::after {
   right: 500px;
   border: solid black;
 }
-/* <<<<<<< HEAD */
+
 .home-btn:hover {
   background-color: blue;
   color: black;
@@ -229,13 +231,13 @@ body::after {
   background-color: green;
   margin: 0px 18px;
   border: 2px solid black;
-  /* padding: 7px; */
+  
 }
 .login-btn:hover {
   background-color: #3fd44e;
   color: black;
 }
-/* ======= */
+
 .ty {
   width: 80px;
   height: 30px;
@@ -251,37 +253,36 @@ body::after {
   font-style: inherit;
   font-weight: 800;
 }
-/* >>>>>>> 6304f9b6d4e56beba2d9ae94c03383fa80e184fa */
-/*  */
-/* Default Navbar Styles */
+
 .navbar {
   position: relative;
+  
 }
-/* Mobile Navbar Styles */
+
 .mobile-navbar {
   position: relative;
 }
 
-/* Hamburger Menu Icon */
+
 .menu-icon {
   display: block;
   position: fixed;
   top: 10px;
   right: 10px;
   cursor: pointer;
-  background-color: transparent; /* No background */
-  color: lightblue; /* Light text color */
+  background-color: transparent; 
+  color: lightblue; 
   padding: 10px;
   font-size: 30px;
-  z-index: 10; /* Keeps it on top */
+  z-index: 10; 
 }
 
 .menu-icon:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* Subtle hover effect */
+  background-color: rgba(255, 255, 255, 0.2); 
   border-radius: 5px;
 }
 
-/* Vertical Menu (hidden by default) */
+
 .vertical-menu {
   display: none;
   position: fixed;
@@ -293,7 +294,7 @@ body::after {
   height: 100%;
   text-align: center;
   padding-top: 50px;
-  z-index: 5; /* Lower than menu-icon */
+  z-index: 5; 
 }
 
 .vertical-menu.show-menu {
@@ -314,13 +315,13 @@ body::after {
   background-color: #007bff;
 }
 
-/* Ensure the menu icon is visible at all screen sizes */
+
 @media (max-width: 992px) {
   .menu-icon {
     display: block;
   }
   .navbar {
-    display: none; /* Hide the original navbar */
+    display: none; 
   }
 }
 .shiv {
