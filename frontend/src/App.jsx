@@ -19,7 +19,6 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const sidebarRef = useRef(null);
 
- 
   const toggleSidebar = () => {
     setIsSidebarOpen((prev) => !prev);
   };
@@ -47,7 +46,7 @@ function App() {
       <div className="app-wrapper">
         <Navbar toggleSidebar={toggleSidebar} isLoggedIn={isLoggedIn} isSidebarOpen={isSidebarOpen}/>
 
-        <Sidebar
+        <Sidebar ref={sidebarRef}
           isOpen={isSidebarOpen}
           toggleSidebar={toggleSidebar}
           isLoggedIn={isLoggedIn} 
@@ -76,7 +75,7 @@ function App() {
                 />
               }
             />
-            <Route path="/sidebar" element={<Home/>} />
+            <Route path="/sidebar" element={<Sidebar/>} />
             <Route
               path="/login"
               element={<Login handleIsLoggedIn={handleIsLoggedIn} />}
@@ -90,8 +89,7 @@ function App() {
         </div>
 
         <Footer />
-        <div ref={sidebarRef} className="sidebar">
-           </div>
+       
       </div>
     </Router>
   );

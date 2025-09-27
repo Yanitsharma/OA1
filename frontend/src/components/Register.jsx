@@ -22,6 +22,20 @@ function Register() {
     });
     return; 
   }
+   
+      if (!emailRegex.test(emailId)) {
+        toast("YOU HAVE ENTERED WRONG EMAIL ID FORMAT", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+        return;
+      }
     const data = {
       emailId: emailId,
       password: password,
@@ -47,21 +61,7 @@ function Register() {
       event.target.form.reset();
     } catch (error) {
       const err = JSON.parse(error.config.data);
-      const validEmail=err.emailId;
-      if (!emailRegex.test(validEmail)) {
-        toast("YOU HAVE ENTERED WRONG EMAIL ID FORMAT", {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
-      }
-      
-    else if (err.password !== "") {
+     if (err.password !== "") {
         if (error.request.status === 500) {
           toast("USER ALREADY REGISTERED", {
             position: "top-right",

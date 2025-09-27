@@ -5,7 +5,7 @@ import Google from "./Google";
 import Amazon from "./Amazon";
 import Visa from "./Visa";
 import BNY from "./BNY"
-import Cisco from "./Microsoft";
+import Cisco from "./Cisco";
 import Deutsche from "./Deutsche";
 import Intuit from "./Intuit";
 import Jlr from "./Jlr";
@@ -39,7 +39,7 @@ const componentMap = {
 const TopicPage = () => {
   const { topicName } = useParams();
   const ComponentToRender = componentMap[topicName] || NotFound;
-  return <ComponentToRender />;
+  return <ComponentToRender/>;
 };
 
 export default TopicPage;

@@ -4,7 +4,7 @@ import "../App.css";
 import { ToastContainer, toast } from "react-toastify";
 import { BsLayoutTextSidebarReverse } from "react-icons/bs";
 
-const Sidebar = ({ isOpen, toggleSidebar, isLoggedIn }) => {
+const Sidebar = React.forwardRef(({isOpen, toggleSidebar, isLoggedIn },ref) => {
   const handleSidebarClick = () => {
     if (isLoggedIn) {
       toggleSidebar();
@@ -23,7 +23,7 @@ const Sidebar = ({ isOpen, toggleSidebar, isLoggedIn }) => {
 
   return (
      <>
-    <div >
+    <div ref={ref}>
       <div
         className="hamburger-icon"
         onClick={handleSidebarClick}
@@ -33,7 +33,7 @@ const Sidebar = ({ isOpen, toggleSidebar, isLoggedIn }) => {
         />
       </div>
       <h3 className="yt">Sidebar</h3>
-      <div className={`sidebar ${isOpen ? "open" : ""}`}>
+      <div  className={`sidebar ${isOpen ? "open" : ""}`}>
         <h3 style={{ margin: "30px 0px" }}>CompanyWise Questions</h3>
         <ul>
           <li className="company-name">
@@ -129,6 +129,6 @@ const Sidebar = ({ isOpen, toggleSidebar, isLoggedIn }) => {
    
    </>
   );
-};
+});
 
 export default Sidebar;
