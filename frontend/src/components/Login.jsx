@@ -20,7 +20,7 @@ const Login = ({ handleIsLoggedIn }) => {
     const data = { emailId, password };
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/login",
+        "https://oa1-2-5edo.onrender.com/api/login",
         data
       );
       console.log(response);
