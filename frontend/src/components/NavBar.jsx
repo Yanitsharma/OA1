@@ -1,18 +1,35 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../App.css";
-import { Link } from "react-router-dom";
+import "../App.css"; // Ensure this path is correct for your project
+import { Link, useNavigate } from "react-router-dom";
 
+const Navbar = ({ toggleSidebar, isLoggedIn, isSidebarOpen }) => {
+  const [searchTerm, setSearchTerm] = useState(""); // State for search input
+  const navigate = useNavigate(); // Hook for navigation
 
-const Navbar = ({toggleSidebar,isLoggedIn,isSidebarOpen}) =>{
-  const handleClick=()=>{
-    if (isLoggedIn) {
-    {isSidebarOpen ? toggleSidebar() : ""}
+  // Logic to handle Sidebar toggling (Mobile)
+  const handleClick = () => {
+    if (isLoggedIn && isSidebarOpen) {
+      toggleSidebar();
     }
-  }
+  };
+
+  // Logic to handle Search Submission
+  const handleSearch = (e) => {
+    e.preventDefault(); // Prevent full page reload
+    if (searchTerm.trim()) {
+      // Navigate to Home page with the search query in the URL
+      navigate(`/?search=${encodeURIComponent(searchTerm)}`);
+      // Optional: Clear the search bar after searching
+      // setSearchTerm(""); 
+    }
+  };
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-success">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-success custom-navbar">
       <div className="container-fluid">
+        
+        {/* Toggler for Mobile View */}
         <button
           className="navbar-toggler"
           type="button"
@@ -24,73 +41,71 @@ const Navbar = ({toggleSidebar,isLoggedIn,isSidebarOpen}) =>{
         >
           <span className="navbar-toggler-icon"></span>
         </button>
+
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul
-            className="navbar-nav me-auto mb-2 mb-lg-0"
-            
-          >
+          
+          {/* LEFT SIDE: Navigation Links */}
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              
-              <Link className="nav-link active" aria-current="page"  to="/" onClick={handleClick}>
-                <button className="btn btn-outline-success ms-3 home-btn " type="button" >
-                  Home
-                </button>
-              </Link>
-             
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/about" onClick={handleClick}>
-                <button
-                  className="btn btn-outline-success ms-3 about-btn"
-                  type="button"
-                >
-                  About Us
-                </button>
+              <Link 
+                className="nav-link btn btn-outline-success ms-2 home-btn" 
+                to="/" 
+                onClick={handleClick}
+              >
+                Home
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/register" onClick={handleClick}>
-                <button
-                  className="btn btn-outline-success ms-3 register-btn"
-                  type="button"
-                >
-                  Register
-                </button>
+              <Link 
+                className="nav-link btn btn-outline-success ms-2 about-btn" 
+                to="/about" 
+                onClick={handleClick}
+              >
+                About Us
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link 
+                className="nav-link btn btn-outline-success ms-2 register-btn" 
+                to="/register" 
+                onClick={handleClick}
+              >
+                Register
               </Link>
             </li>
           </ul>
-           
-         
-          <Link className="nav-link" to="/login" onClick={handleClick}>
-          <button
-            className="btn btn-outline-success ms-3 login-btn"
-            type="button"
-           
-          >
-            Login
-          </button>
-          </Link>
-         
-          
-         
-          <form className="d-flex">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button className="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
+
+          {/* RIGHT SIDE: Login & Search (Grouped for spacing) */}
+          <div className="right-actions d-flex align-items-center">
+            
+            <Link 
+              className="btn custom-login-btn me-3" 
+              to="/login" 
+              onClick={handleClick}
+            >
+              Login
+            </Link>
+
+            {/* SEARCH FORM - Now functional */}
+            <form className="d-flex search-form" role="search" onSubmit={handleSearch}>
+              <input
+                className="form-control me-2"
+                type="search"
+                placeholder="Search companies or topics..."
+                aria-label="Search"
+                value={searchTerm} // Controlled input
+                onChange={(e) => setSearchTerm(e.target.value)} // Update state
+              />
+              <button className="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+
         </div>
       </div>
     </nav>
-    
-    
   );
-}
+};
 
 export default Navbar;
-

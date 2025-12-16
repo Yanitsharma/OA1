@@ -7,13 +7,12 @@ import Sidebar from "./components/Sidebar";
 import About from "./components/About";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useRef, useEffect } from "react"; 
-
+import QuestionDetail from "./components/QuestionDetail";
 
 import Home from "./components/Home";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import TopicPage from "./components/TopicPage";
-import Microsoft from "./components/Microsoft";
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -82,14 +81,13 @@ function App() {
             />
             <Route path="/about" element={<About />} />
             <Route path="/register" element={<Register />} />
-             
+             <Route path="/question/:id" element={<QuestionDetail />} />
              
             <Route path="/topic/:topicName" element={<TopicPage />} />
           </Routes>
         </div>
 
         <Footer />
-       
       </div>
     </Router>
   );
