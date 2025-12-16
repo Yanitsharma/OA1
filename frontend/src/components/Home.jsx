@@ -166,7 +166,7 @@ const Home = ({ toggleSidebar, isLoggedIn }) => {
           <p>Companies</p>
         </div>
         <div className="stat-item">
-          <h2>10k+</h2>
+          <h2>100+</h2>
           <p>Users</p>
         </div>
       </div>
@@ -188,7 +188,7 @@ const Home = ({ toggleSidebar, isLoggedIn }) => {
           <div className="feature-card">
             <div className="feature-icon"><FaRocket /></div>
             <h3>Boost Confidence</h3>
-            <p>Simulate real interview scenarios with our clean, distraction-free interface.</p>
+            <p>Simulate real assesment scenarios with our clean, distraction-free interface.</p>
           </div>
         </div>
       </section>
