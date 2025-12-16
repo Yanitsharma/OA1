@@ -20,7 +20,7 @@ const Login = ({ handleIsLoggedIn }) => {
     
     try {
       const response = await axios.post(
-        "https://oa1-2-5edo.onrender.com/api/login",
+        "https://oa1-3.onrender.com/api/login",
         data
       );
       console.log(response);

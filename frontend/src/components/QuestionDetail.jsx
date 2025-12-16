@@ -17,7 +17,7 @@ const QuestionDetail = () => {
       try {
         setLoading(true);
         // Ensure this matches your actual API endpoint for a SINGLE question
-        const response = await axios.get(`http://localhost:4000/api/questions/${id}`);
+        const response = await axios.get(`https://oa1-3.onrender.com/api/questions/${id}`);
         setQuestion(response.data);
       } catch (err) {
         console.error("Error fetching question:", err);
