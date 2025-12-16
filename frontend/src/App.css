@@ -1142,3 +1142,239 @@ pre {
 /* 2. OPTIONAL: Fix for QuestionDetail inner scrolling */
 /* Since the page is no longer fixed, we don't need overflow-y on the container */
 /* The browser's main scrollbar will handle scrolling now. */
+/* --- Mobile Navbar Container --- */
+.mobile-navbar {
+  display: block; /* Visible by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 20px;
+  background-color: #333; /* Dark background */
+  color: white;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* --- Hamburger Icon --- */
+.menu-icon {
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #fff;
+  display: inline-block;
+}
+
+/* --- Backdrop (Dark Overlay) --- */
+.menu-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  z-index: 998; /* Behind the menu, in front of content */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.menu-backdrop.show-backdrop {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* --- Sliding Vertical Menu --- */
+.vertical-menu {
+  position: fixed;
+  top: 0;
+  left: -280px; /* Hidden off-screen to the left */
+  width: 250px; /* Fixed width for the menu */
+  height: 100vh;
+  background-color: #222;
+  padding-top: 60px;
+  z-index: 999; /* On top of everything */
+  transition: left 0.3s ease-in-out; /* Smooth slide animation */
+  box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+}
+
+/* Class added when menu is open */
+.vertical-menu.show-menu {
+  left: 0; /* Slide in */
+}
+
+/* --- Navigation Links --- */
+.vertical-menu ul {
+  padding: 0;
+  margin: 0;
+}
+
+.vertical-menu .nav-link {
+  display: block;
+  padding: 15px 25px;
+  font-size: 1.2rem;
+  color: #ddd;
+  text-decoration: none;
+  border-bottom: 1px solid #333;
+  transition: background 0.2s;
+}
+
+.vertical-menu .nav-link:hover,
+.vertical-menu .nav-link:active {
+  background-color: #444;
+  color: #fff;
+}
+
+/* --- Close Button (X) --- */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* --- MEDIA QUERY: Desktop --- */
+/* If the screen is wider than 768px, hide the mobile navbar */
+@media (min-width: 769px) {
+  .mobile-navbar {
+    display: none;
+  }
+}
+
+/* --- Mobile Navbar Container --- */
+.mobile-navbar {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px; /* Fixed height to prevent layout shifts */
+  padding: 0 20px;
+  background-color: #1a1a1a; /* Dark background matching your theme */
+  color: white;
+  z-index: 9999; /* IMPORTANT: Higher than everything else */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  display: flex; /* Flexbox for alignment */
+  align-items: center; /* Vertically center the icon */
+}
+
+/* Header container to hold icon and title */
+.navbar-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.menu-icon {
+  cursor: pointer;
+  padding: 5px;
+  transition: transform 0.2s;
+}
+
+.menu-icon:active {
+  transform: scale(0.95);
+}
+
+/* --- Backdrop --- */
+.menu-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px); /* Blur effect behind menu */
+  z-index: 9998;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.menu-backdrop.show-backdrop {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* --- Sliding Menu --- */
+.vertical-menu {
+  position: fixed;
+  top: 0;
+  left: -280px;
+  width: 280px;
+  height: 100vh;
+  background-color: #222;
+  padding-top: 20px;
+  z-index: 99999; /* Highest z-index */
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 15px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+.vertical-menu.show-menu {
+  left: 0;
+}
+
+/* --- Mobile Search Bar Styling --- */
+.mobile-search-container {
+  padding: 0 20px;
+  margin-top: 40px; /* Space for close button */
+  margin-bottom: 20px;
+}
+
+.mobile-search-input {
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 1px solid #444;
+  background-color: #333;
+  color: white;
+  outline: none;
+  font-size: 1rem;
+}
+
+.mobile-search-input:focus {
+  border-color: #38bdf8; /* Blue highlight on focus */
+  background-color: #444;
+}
+
+/* --- Links --- */
+.vertical-menu .nav-link {
+  display: block;
+  padding: 15px 25px;
+  font-size: 1.1rem;
+  color: #ccc;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: all 0.2s;
+}
+
+.vertical-menu .nav-link:hover {
+  background-color: #333;
+  color: white;
+  border-left: 3px solid #38bdf8;
+  padding-left: 30px; /* Slide effect on hover */
+}
+
+/* --- Close Button --- */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2rem;
+  color: #888;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.close-btn:hover {
+  color: white;
+}
+
+/* --- Responsive Hide --- */
+@media (min-width: 769px) {
+  .mobile-navbar {
+    display: none;
+  }
+}

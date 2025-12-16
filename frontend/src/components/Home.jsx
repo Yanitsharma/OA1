@@ -26,7 +26,7 @@ const Home = ({ toggleSidebar, isLoggedIn }) => {
       setError(null);
       try {
         const response = await axios.get(
-          `http://localhost:4000/api/questions?search=${searchQuery}`
+          `https://oa1-1.onrender.com/api/questions?search=${searchQuery}`
         );
         setQuestions(response.data);
       } catch (err) {

@@ -42,7 +42,7 @@ function Register() {
     };
     try {
       const response = await axios.post(
-        "https://oa1-3.onrender.com/api/signup",
+        "https://oa1-1.onrender.com/api/signup",
         data
       );
       console.log(response);
