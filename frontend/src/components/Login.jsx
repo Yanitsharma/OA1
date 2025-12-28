@@ -20,7 +20,7 @@ const Login = ({ handleIsLoggedIn }) => {
     
     try {
       const response = await axios.post(
-        "https://oa1-1.onrender.com/api/login",
+        "https://ooaaa.vercel.app/api/login",
         data
       );
       console.log(response);
