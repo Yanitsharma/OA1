@@ -48,28 +48,31 @@ app.post('/api/login',async (req,res)=>{
 // Endpoint: POST http://localhost:4000/api/questions/add
 app.get('/api/questions', async (req, res) => {
     try {
-        const { search } = req.query; // Capture ?search=value from URL
+        const { search } = req.query; 
 
         let query = {};
+        
+        // Define the collation settings to match your Model
+        const collationSettings = { locale: 'en', strength: 2 };
 
         if (search) {
-            // Create a Case-Insensitive Regex
-            // The 'i' flag means "Google" matches "google", "GOOGLE", etc.
-            const searchRegex = new RegExp(search, 'i');
+            // OPTIMIZATION:
+            // 1. We use '^' to anchor the search to the start (Prefix Search).
+            // 2. We REMOVE the 'i' flag. The Collation handles case-insensitivity.
+            // 3. This allows MongoDB to use the B-Tree Index for O(log n) lookup.
+            const searchRegex = new RegExp(`^${search}`); 
 
             query = {
                 $or: [
-                    // A. Match Question Title (Partial/Prefix match)
                     { title: { $regex: searchRegex } },
-                    
-                    // B. Match Company Name (Checks if the array contains the value)
                     { companies: { $in: [searchRegex] } } 
                 ]
             };
         }
 
-        // Fetch filtered questions from DB
-        const questions = await Question.find(query);
+        // We chain .collation() so MongoDB knows to use the case-insensitive index
+        const questions = await Question.find(query)
+                                        .collation(collationSettings);
         
         res.status(200).json(questions);
 
@@ -172,6 +175,11 @@ app.get('/api/questions', async (req, res) => {
     res.json(questions);
 });
 const port=process.env.PORT;
-app.listen(port,()=>{
-  console.log(`server is running on ${port}`);
-})
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(port, () => {
+        console.log(`Server is running locally on port ${port}`);
+    });
+}
+
+// Export the app so Vercel can run it as a serverless function
+module.exports = app;
