@@ -20,7 +20,7 @@ const Login = ({ handleIsLoggedIn }) => {
     
     try {
       const response = await axios.post(
-        "https://oooo-gilt-kappa.vercel.app/api/login",
+        "https://ooooo-two.vercel.app/api/login",
         data
       );
       console.log(response);

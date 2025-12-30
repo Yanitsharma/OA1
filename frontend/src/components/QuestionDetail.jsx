@@ -17,7 +17,7 @@ const QuestionDetail = () => {
       try {
         setLoading(true);
         // Ensure this matches your actual API endpoint for a SINGLE question
-        const response = await axios.get(`https://oooo-gilt-kappa.vercel.app/api/questions/${id}`);
+        const response = await axios.get(`https://ooooo-two.vercel.app/api/questions/${id}`);
         setQuestion(response.data);
       } catch (err) {
         console.error("Error fetching question:", err);
