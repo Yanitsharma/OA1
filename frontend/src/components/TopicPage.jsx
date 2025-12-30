@@ -18,7 +18,7 @@ const TopicPage = () => {
         
         // REPLACE THIS URL with your actual backend endpoint
         // Example: http://localhost:5000/api/questions/company/Microsoft
-        const response = await fetch(`https://ooaaa.vercel.app/api/questions/company/${topicName}`);
+        const response = await fetch(`https://oooo-gilt-kappa.vercel.app/api/questions/company/${topicName}`);
         
         if (!response.ok) {
           throw new Error("Failed to fetch questions");

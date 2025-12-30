@@ -42,7 +42,7 @@ function Register() {
     };
     try {
       const response = await axios.post(
-        "https://ooaaa.vercel.app/api/signup",
+        "https://oooo-gilt-kappa.vercel.app/api/signup",
         data
       );
       console.log(response);
