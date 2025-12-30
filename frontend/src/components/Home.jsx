@@ -26,7 +26,7 @@ const Home = ({ toggleSidebar, isLoggedIn }) => {
       setError(null);
       try {
         const response = await axios.get(
-          `https://ooaaa.vercel.app/api/questions?search=${searchQuery}`
+          `https://ooooo-two.vercel.app/api/questions?search=${searchQuery}`
         );
         setQuestions(response.data);
       } catch (err) {
